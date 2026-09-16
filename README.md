@@ -41,3 +41,10 @@ publish this repository's commit and LFS objects first.
 This repository starts with fresh Git history and stores large assets in LFS
 from its first commit. The original LongMarchAssets repository is preserved
 for older LongMarch revisions.
+
+## Source snapshot
+
+Imported from `LazyJazzDev/LongMarchAssets` branch `sparks-json`, commit
+`ff37d343f5ea60b91de58a3cbe9c6796572f8b67`. Original scene documentation follows.
+
+# LongMarchAssets
