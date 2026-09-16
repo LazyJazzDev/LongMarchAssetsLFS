@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://longmarch.dev/schemas/sparkium-scene-v1.json",
+  "title": "Sparkium scene",
+  "type": "object",
+  "required": ["format", "version", "film", "renderer", "camera", "materials", "geometries", "entities"],
+  "properties": {
+    "format": { "const": "sparkium-scene" },
+    "version": { "const": 1 },
+    "name": { "type": "string" },
+    "film": {
+      "type": "object",
+      "required": ["width", "height"],
+      "properties": {
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 },
+        "persistence": { "type": "number" },
+        "clamping": { "type": "number" },
+        "max_exposure": { "type": "number" },
+        "view_transform": { "enum": ["normalized", "standard", "filmic"] },
+        "exposure": { "type": "number" },
+        "gamma": { "type": "number", "exclusiveMinimum": 0 },
+        "contrast": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "renderer": {
+      "type": "object",
+      "properties": {
+        "pipeline": { "enum": ["auto", "rasterization", "ray_tracing"] },
+        "samples_per_dispatch": { "type": "integer", "minimum": 1 },
+        "max_bounces": { "type": "integer", "minimum": 1 },
+        "alpha_shadow": { "type": "boolean" },
+        "ambient_light": { "$ref": "#/$defs/vec3" },
+        "background_color": { "$ref": "#/$defs/vec3" }
+      }
+    },
+    "camera": {
+      "type": "object",
+      "required": ["eye", "target"],
+      "properties": {
+        "eye": { "$ref": "#/$defs/vec3" },
+        "target": { "$ref": "#/$defs/vec3" },
+        "up": { "$ref": "#/$defs/vec3" },
+        "fov_degrees": { "type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 180 },
+        "aperture_radius": { "type": "number", "minimum": 0 },
+        "focus_distance": { "type": "number", "exclusiveMinimum": 0 },
+        "aperture_blades": { "type": "integer", "minimum": 0 },
+        "aperture_rotation": { "type": "number" },
+        "aperture_ratio": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "materials": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/material" }
+    },
+    "geometries": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/geometry" }
+    },
+    "entities": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/entity" }
+    }
+  },
+  "$defs": {
+    "vec2": {
+      "type": "array", "prefixItems": [{ "type": "number" }, { "type": "number" }], "minItems": 2, "maxItems": 2
+    },
+    "vec3": {
+      "type": "array", "prefixItems": [{ "type": "number" }, { "type": "number" }, { "type": "number" }],
+      "minItems": 3, "maxItems": 3
+    },
+    "textures": {
+      "type": "object",
+      "properties": {
+        "normal": { "type": "string" }, "base_color": { "type": "string" },
+        "metallic": { "type": "string" }, "specular": { "type": "string" },
+        "roughness": { "type": "string" }, "anisotropic": { "type": "string" },
+        "anisotropic_rotation": { "type": "string" }, "emission": { "type": "string" },
+        "normal_reverse_y": { "type": "boolean" }
+      }
+    },
+    "material": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": { "enum": ["lambertian", "specular", "light", "principled", "shader_graph"] },
+        "base_color": { "$ref": "#/$defs/vec3" }, "emission": { "$ref": "#/$defs/vec3" },
+        "two_sided": { "type": "boolean" }, "block_ray": { "type": "boolean" },
+        "camera_visible": { "type": "boolean" },
+        "falloff_distance": { "type": "number", "minimum": 0.0 },
+        "subsurface_color": { "$ref": "#/$defs/vec3" }, "subsurface_radius": { "$ref": "#/$defs/vec3" },
+        "emission_color": { "$ref": "#/$defs/vec3" }, "textures": { "$ref": "#/$defs/textures" },
+        "subsurface": { "type": "number" }, "metallic": { "type": "number" },
+        "specular": { "type": "number" }, "specular_tint": { "type": "number" },
+        "roughness": { "type": "number" }, "anisotropic": { "type": "number" },
+        "anisotropic_rotation": { "type": "number" }, "sheen": { "type": "number" },
+        "sheen_tint": { "type": "number" }, "clearcoat": { "type": "number" },
+        "clearcoat_roughness": { "type": "number" }, "ior": { "type": "number" },
+        "transmission": { "type": "number" }, "transmission_roughness": { "type": "number" },
+        "emission_strength": { "type": "number" },
+        "emission_hint": { "$ref": "#/$defs/vec3" },
+        "graph": { "$ref": "#/$defs/shaderGraph" }
+      }
+    },
+    "shaderInput": {
+      "oneOf": [
+        { "type": "number" },
+        { "type": "array", "items": { "type": "number" }, "minItems": 1, "maxItems": 4 },
+        {
+          "type": "object", "required": ["node"],
+          "properties": { "node": { "type": "string" }, "output": { "type": "string" } }
+        }
+      ]
+    },
+    "shaderNode": {
+      "type": "object", "required": ["type"],
+      "properties": {
+        "type": { "enum": ["value", "rgb", "texture_coordinate", "image_texture", "mapping",
+          "noise_texture", "voronoi_texture", "gradient_texture", "invert", "mix", "math",
+          "color_ramp", "rgb_curves", "hue_saturation", "layer_weight", "normal_map", "bump",
+          "combine", "separate", "passthrough", "brick_texture", "wave_texture", "sky_texture",
+          "vertex_attribute", "object_info", "geometry_info", "light_path", "gamma", "bright_contrast", "invert_y"] },
+        "path": { "type": "string" },
+        "color_space": { "enum": ["srgb", "linear"] },
+        "inputs": { "type": "object", "additionalProperties": { "$ref": "#/$defs/shaderInput" } },
+        "blend_type": { "type": "string" }, "operation": { "type": "string" },
+        "gradient_type": { "type": "string" }, "interpolation": { "type": "string" },
+        "name": { "type": "string" }, "wave_type": { "type": "string" },
+        "bands_direction": { "type": "string" }, "rings_direction": { "type": "string" },
+        "wave_profile": { "type": "string" }, "sun_direction": { "$ref": "#/$defs/vec3" },
+        "turbidity": { "type": "number" },
+        "elements": { "type": "array" }, "samples": { "type": "array" }
+      }
+    },
+    "shaderGraph": {
+      "type": "object", "required": ["nodes", "surface"],
+      "properties": {
+        "nodes": { "type": "object", "additionalProperties": { "$ref": "#/$defs/shaderNode" } },
+        "surface": { "type": "object", "additionalProperties": { "$ref": "#/$defs/shaderInput" } }
+      }
+    },
+    "geometry": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": { "enum": ["mesh", "binary_mesh", "hair", "sphere", "inline_mesh"] },
+        "path": { "type": "string" }, "longitude_segments": { "type": "integer", "minimum": 3 },
+        "latitude_segments": { "type": "integer", "minimum": 2 },
+        "radial_segments": { "type": "integer", "minimum": 3 },
+        "positions": { "type": "array", "items": { "$ref": "#/$defs/vec3" } },
+        "tex_coords": { "type": "array", "items": { "$ref": "#/$defs/vec2" } },
+        "indices": { "type": "array", "items": { "type": "integer", "minimum": 0 } },
+        "generate_normals": { "type": "boolean" }, "generate_tangents": { "type": "boolean" }
+      }
+    },
+    "transform": {
+      "type": "object",
+      "properties": {
+        "translation": { "$ref": "#/$defs/vec3" }, "rotation_degrees": { "$ref": "#/$defs/vec3" },
+        "scale": { "$ref": "#/$defs/vec3" },
+        "matrix": {
+          "type": "array", "items": { "type": "number" }, "minItems": 16, "maxItems": 16
+        }
+      }
+    },
+    "lookAt": {
+      "type": "object",
+      "required": ["position", "target"],
+      "properties": {
+        "position": { "$ref": "#/$defs/vec3" }, "target": { "$ref": "#/$defs/vec3" },
+        "up": { "$ref": "#/$defs/vec3" }, "scale": { "$ref": "#/$defs/vec3" }
+      }
+    },
+    "entity": {
+      "oneOf": [
+        {
+          "type": "object", "required": ["type", "geometry", "material"],
+          "properties": {
+            "type": { "const": "mesh" }, "geometry": { "type": "string" }, "material": { "type": "string" },
+            "transform": { "$ref": "#/$defs/transform" }, "look_at": { "$ref": "#/$defs/lookAt" },
+            "raster_light": { "type": "boolean" }
+          }
+        },
+        {
+          "type": "object", "required": ["type", "position", "color", "strength"],
+          "properties": {
+            "type": { "const": "point_light" }, "position": { "$ref": "#/$defs/vec3" },
+            "color": { "$ref": "#/$defs/vec3" }, "strength": { "type": "number" },
+            "radius": { "type": "number", "minimum": 0 }, "soft_falloff": { "type": "boolean" },
+            "sampling_weight": { "type": "number", "minimum": 0 }
+          }
+        }
+      ]
+    }
+  }
+}

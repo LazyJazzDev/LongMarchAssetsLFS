@@ -1,0 +1,3 @@
+# _mainScene
+
+Converted from Blender's official `classroom.blend` benchmark scene with [`scripts/blender_to_sparkium.py`](../../../scripts/blender_to_sparkium.py). [Upstream benchmark](https://projects.blender.org/blender/blender-benchmarks/src/branch/main/cycles/classroom). The directory is self-contained; see `conversion-report.json` for conversion statistics and approximations.

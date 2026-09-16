@@ -1,0 +1,12 @@
+{
+  "source": "/tmp/blender-benchmarks/cycles/junkshop/junkshop.blend",
+  "blender_version": "5.0.1",
+  "mesh_instances": 38,
+  "triangles": 3148725,
+  "materials": 46,
+  "textures": 145,
+  "lights": 17,
+  "hair_strands": 3216,
+  "hair_points": 209040,
+  "warnings": []
+}

@@ -1,0 +1,12 @@
+{
+  "source": "/tmp/blender-benchmarks/cycles/monster/monster.blend",
+  "blender_version": "5.0.1",
+  "mesh_instances": 39,
+  "triangles": 1602400,
+  "materials": 28,
+  "textures": 20,
+  "lights": 9,
+  "hair_strands": 0,
+  "hair_points": 0,
+  "warnings": []
+}

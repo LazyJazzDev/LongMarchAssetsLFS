@@ -1,0 +1,14 @@
+{
+  "source": "/tmp/blender-benchmarks/cycles/classroom/classroom.blend",
+  "blender_version": "5.0.1",
+  "mesh_instances": 920,
+  "triangles": 354724,
+  "materials": 78,
+  "textures": 46,
+  "lights": 4,
+  "hair_strands": 0,
+  "hair_points": 0,
+  "warnings": [
+    "sun light 'sun' exported as a distant point light"
+  ]
+}

@@ -1,0 +1,7716 @@
+{
+  "format": "sparkium-scene",
+  "version": 1,
+  "name": "Extended",
+  "film": {
+    "width": 2000,
+    "height": 1000,
+    "persistence": 1.0,
+    "clamping": 100.0,
+    "max_exposure": 16.0
+  },
+  "renderer": {
+    "pipeline": "ray_tracing",
+    "samples_per_dispatch": 8,
+    "max_bounces": 16,
+    "alpha_shadow": true,
+    "ambient_light": [
+      0.02,
+      0.02,
+      0.02
+    ],
+    "background_color": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "camera": {
+    "eye": [
+      4.496359825134277,
+      0.6349354982376099,
+      8.036633491516113
+    ],
+    "target": [
+      3.8790340423583984,
+      0.8371604681015015,
+      7.276361465454102
+    ],
+    "up": [
+      0.12744562327861786,
+      0.9793391227722168,
+      0.15701128542423248
+    ],
+    "fov_degrees": 35.52658957908959,
+    "aperture_radius": 0.0624300852055835,
+    "focus_distance": 8.730000495910645,
+    "aperture_blades": 6,
+    "aperture_rotation": 0.0,
+    "aperture_ratio": 1.0
+  },
+  "materials": {
+    "Background_Pipes": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_Tubos01Fondo_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_Tubos01Fondo_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_Tubos01Fondo_Metallic.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_Tubos01Fondo_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Background_Pipes_Closer": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_FondoTubos02_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_FondoTubos02_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_FondoTubos02_Metallic.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_FondoTubos02_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Background_Wall": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_ParedLejos_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_ParedLejos_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_ParedLejos_Metallic.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_ParedLejos_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 0.5
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Background_Cylinders": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_CilindrosFondo_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_CilindrosFondo_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_CilindrosFondo_Metallic.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_CilindrosFondo_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Background_Cube": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_CuboFondo_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_CuboFondo_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_CuboFondo_Metallic.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_CuboFondo_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Gears": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_Gears_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_Gears_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_Gears_Metallic.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly3_Gears_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Floor_Background": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/PISOGENERAL_PisoLejos_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/PISOGENERAL_PisoLejos_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/PISOGENERAL_PisoLejos_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/PISOGENERAL_PisoLejos_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "POBox": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_PO_Box_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_PO_Box_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_PO_Box_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_PO_Box_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Store_Wall": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_MuroTienda_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_MuroTienda_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_MuroTienda_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_MuroTienda_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Ceiling": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Techo_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Techo_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Techo_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Techo_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Furniture": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n4": {
+            "type": "texture_coordinate"
+          },
+          "n3": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n4",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n2": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_ConversationArticles_SSS.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n3",
+                "output": "vector"
+              }
+            }
+          },
+          "n1": {
+            "type": "color_ramp",
+            "interpolation": "LINEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  0.3396722972393036,
+                  0.3396722972393036,
+                  0.3396722972393036,
+                  1.0
+                ]
+              }
+            ],
+            "inputs": {
+              "factor": {
+                "node": "n2",
+                "output": "color"
+              }
+            }
+          },
+          "n5": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_ConversationArticles_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n3",
+                "output": "vector"
+              }
+            }
+          },
+          "n0": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n1",
+                "output": "color"
+              },
+              "a": {
+                "node": "n5",
+                "output": "color"
+              },
+              "b": [
+                0.48320019245147705,
+                0.6106194257736206,
+                0.6999999284744263,
+                1.0
+              ]
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_ConversationArticles_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n3",
+                "output": "vector"
+              }
+            }
+          },
+          "n7": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_ConversationArticles_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n3",
+                "output": "vector"
+              }
+            }
+          },
+          "n9": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_ConversationArticles_Opacity.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n3",
+                "output": "vector"
+              }
+            }
+          },
+          "n8": {
+            "type": "invert",
+            "inputs": {
+              "factor": 1.0,
+              "color": {
+                "node": "n9",
+                "output": "color"
+              }
+            }
+          },
+          "n11": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_ConversationArticles_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n3",
+                "output": "vector"
+              }
+            }
+          },
+          "n10": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n11",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "result"
+          },
+          "roughness": {
+            "node": "n6",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n7",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": {
+            "node": "n8",
+            "output": "color"
+          },
+          "subsurface": 1.0,
+          "subsurface_scale": {
+            "node": "n1",
+            "output": "color"
+          },
+          "normal": {
+            "node": "n10",
+            "output": "normal"
+          },
+          "thin_walled": 1.0,
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          },
+          "subsurface_radius": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "subsurface_method": 0.0
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Table_cloth": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_JarronesMantel_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_JarronesMantel_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "color_ramp",
+            "interpolation": "LINEAR",
+            "elements": [
+              {
+                "position": 0.550000011920929,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 0.9954550266265869,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ],
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "color"
+              }
+            }
+          },
+          "n5": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_JarronesMantel_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n7": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_JarronesMantel_Opacity.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "invert",
+            "inputs": {
+              "factor": 1.0,
+              "color": {
+                "node": "n7",
+                "output": "color"
+              }
+            }
+          },
+          "n9": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_JarronesMantel_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n8": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n9",
+                "output": "color"
+              },
+              "strength": 0.10000000149011612
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n5",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": {
+            "node": "n6",
+            "output": "color"
+          },
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n8",
+            "output": "normal"
+          },
+          "thin_walled": 1.0,
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Tools": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Accesorios_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Accesorios_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Accesorios_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Accesorios_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Ads": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_AnunciosColgantes_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_AnunciosColgantes_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_AnunciosColgantes_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_AnunciosColgantes_Opacity.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "invert",
+            "inputs": {
+              "factor": 1.0,
+              "color": {
+                "node": "n6",
+                "output": "color"
+              }
+            }
+          },
+          "n8": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_AnunciosColgantes_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n7": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n8",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": {
+            "node": "n5",
+            "output": "color"
+          },
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n7",
+            "output": "normal"
+          },
+          "thin_walled": 1.0,
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Floor_Front": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/PISOGENERAL_PisoCerca_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/PISOGENERAL_PisoCerca_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/PISOGENERAL_PisoCerca_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/PISOGENERAL_PisoCerca_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Front_Pipes.001": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Tubos_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Tubos_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Tubos_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Tubos_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Props": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_HornoResorte_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_HornoResorte_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_HornoResorte_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_HornoResorte_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Stoplight": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Semaforo_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Semaforo_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Semaforo_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Semaforo_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          },
+          "n7": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Semaforo_Emissive.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "closure_emission_1": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": {
+                "node": "n7",
+                "output": "color"
+              },
+              "b": 1.5
+            }
+          },
+          "closure_mix_2": {
+            "type": "mix",
+            "blend_type": "ADD",
+            "inputs": {
+              "factor": 1.0,
+              "a": {
+                "node": "closure_emission_0",
+                "output": "result"
+              },
+              "b": {
+                "node": "closure_emission_1",
+                "output": "result"
+              }
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_mix_2",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        1.5,
+        1.5,
+        1.5
+      ]
+    },
+    "Table": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_MesaPrincipal_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_MesaPrincipal_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_MesaPrincipal_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_MesaPrincipal_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Tickets": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Tickets_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Tickets_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Tickets_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Tickets_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Face": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n4": {
+            "type": "texture_coordinate"
+          },
+          "n3": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n4",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n2": {
+            "type": "image_texture",
+            "path": "textures/Mona_Cara_SSS.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n3",
+                "output": "vector"
+              }
+            }
+          },
+          "n1": {
+            "type": "color_ramp",
+            "interpolation": "LINEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  0.6445937156677246,
+                  0.6445937156677246,
+                  0.6445937156677246,
+                  1.0
+                ]
+              }
+            ],
+            "inputs": {
+              "factor": {
+                "node": "n2",
+                "output": "color"
+              }
+            }
+          },
+          "n5": {
+            "type": "image_texture",
+            "path": "textures/Mona_Cara_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n3",
+                "output": "vector"
+              }
+            }
+          },
+          "n0": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n1",
+                "output": "color"
+              },
+              "a": {
+                "node": "n5",
+                "output": "color"
+              },
+              "b": [
+                0.699999988079071,
+                0.10000000149011612,
+                0.10000000149011612,
+                1.0
+              ]
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/Mona_Cara_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n3",
+                "output": "vector"
+              }
+            }
+          },
+          "n7": {
+            "type": "image_texture",
+            "path": "textures/Mona_Cara_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n3",
+                "output": "vector"
+              }
+            }
+          },
+          "n9": {
+            "type": "image_texture",
+            "path": "textures/Mona_Cara_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n3",
+                "output": "vector"
+              }
+            }
+          },
+          "n8": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n9",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "result"
+          },
+          "roughness": {
+            "node": "n6",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n7",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 1.0,
+          "subsurface_scale": {
+            "node": "n1",
+            "output": "color"
+          },
+          "normal": {
+            "node": "n8",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          },
+          "subsurface_radius": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "subsurface_method": 0.0
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Eyes": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/Mona_OjosDientes_BaseColor.jpg.jpg",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/Mona_OjosDientes_Roughness.jpg.jpg",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/Mona_OjosDientes_Metalness.jpg.jpg",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/Mona_OjosDientes_Normal.jpg.jpg",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "alpha"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.25,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Hat": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/Mona_Sombrero_BaseColor.jpg.jpg",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/Mona_Sombrero_Roughness.jpg.jpg",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/Mona_Sombrero_Metalness.jpg.jpg",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/Mona_Sombrero_Normal.jpg.jpg",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Body": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n4": {
+            "type": "texture_coordinate"
+          },
+          "n3": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n4",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n2": {
+            "type": "image_texture",
+            "path": "textures/Mona_Camisa_SSS.jpg.jpg",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n3",
+                "output": "vector"
+              }
+            }
+          },
+          "n1": {
+            "type": "color_ramp",
+            "interpolation": "LINEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  0.21469205617904663,
+                  0.21469205617904663,
+                  0.21469205617904663,
+                  1.0
+                ]
+              }
+            ],
+            "inputs": {
+              "factor": {
+                "node": "n2",
+                "output": "color"
+              }
+            }
+          },
+          "n5": {
+            "type": "image_texture",
+            "path": "textures/Mona_Camisa_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n3",
+                "output": "vector"
+              }
+            }
+          },
+          "n0": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n1",
+                "output": "color"
+              },
+              "a": {
+                "node": "n5",
+                "output": "color"
+              },
+              "b": [
+                0.699999988079071,
+                0.10000000149011612,
+                0.10000000149011612,
+                1.0
+              ]
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/Mona_Camisa_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n3",
+                "output": "vector"
+              }
+            }
+          },
+          "n7": {
+            "type": "image_texture",
+            "path": "textures/Mona_Camisa_Metallic.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n3",
+                "output": "vector"
+              }
+            }
+          },
+          "n9": {
+            "type": "image_texture",
+            "path": "textures/Mona_Camisa_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n3",
+                "output": "vector"
+              }
+            }
+          },
+          "n8": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n9",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "result"
+          },
+          "roughness": {
+            "node": "n6",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n7",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 1.0,
+          "subsurface_scale": {
+            "node": "n1",
+            "output": "color"
+          },
+          "normal": {
+            "node": "n8",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          },
+          "subsurface_radius": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "subsurface_method": 1.0
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Vest": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/Mona_Chaleco_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/Mona_Chaleco_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/Mona_Chaleco_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/Mona_Chaleco_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Gloves": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/Mona_Guantes_BaseColor.jpg.jpg",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/Mona_Guantes_Roughness.jpg.jpg",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/Mona_Guantes_Metalness.jpg.jpg",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/Mona_Guantes_Normal.jpg.jpg",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Old_Robots": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Robot50s_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Robot50s_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Robot50s_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Robot50s_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          },
+          "n7": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Robot50s_Emissive.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "closure_emission_1": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": {
+                "node": "n7",
+                "output": "color"
+              },
+              "b": 1.0
+            }
+          },
+          "closure_mix_2": {
+            "type": "mix",
+            "blend_type": "ADD",
+            "inputs": {
+              "factor": 1.0,
+              "a": {
+                "node": "closure_emission_0",
+                "output": "result"
+              },
+              "b": {
+                "node": "closure_emission_1",
+                "output": "result"
+              }
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_mix_2",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "RadioNes": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_RadioNes_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_RadioNes_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_RadioNes_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_RadioNes_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          },
+          "n7": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_RadioNes_Emissive.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "closure_emission_1": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": {
+                "node": "n7",
+                "output": "color"
+              },
+              "b": 3.0
+            }
+          },
+          "closure_mix_2": {
+            "type": "mix",
+            "blend_type": "ADD",
+            "inputs": {
+              "factor": 1.0,
+              "a": {
+                "node": "closure_emission_0",
+                "output": "result"
+              },
+              "b": {
+                "node": "closure_emission_1",
+                "output": "result"
+              }
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_mix_2",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        3.0,
+        3.0,
+        3.0
+      ]
+    },
+    "Cristal": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n1": {
+            "type": "image_texture",
+            "path": "textures/CristalesLP_Cristales_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {}
+          },
+          "n0": {
+            "type": "color_ramp",
+            "interpolation": "LINEAR",
+            "elements": [
+              {
+                "position": 0.0,
+                "color": [
+                  0.0,
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              },
+              {
+                "position": 1.0,
+                "color": [
+                  1.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              }
+            ],
+            "inputs": {
+              "factor": {
+                "node": "n1",
+                "output": "color"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/CristalesLP_Cristales_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {}
+          },
+          "n2": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n3",
+                "output": "color"
+              },
+              "strength": 0.10000000149011612
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          },
+          "n5": {
+            "type": "light_path"
+          },
+          "n4": {
+            "type": "math",
+            "operation": "MAXIMUM",
+            "inputs": {
+              "a": {
+                "node": "n5",
+                "output": "is_shadow_ray"
+              },
+              "b": {
+                "node": "n5",
+                "output": "is_reflection_ray"
+              },
+              "c": 0.0
+            }
+          },
+          "closure_mix_1": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": 0.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_2": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": 0.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_3": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": 0.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_4": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": {
+                "node": "n0",
+                "output": "color"
+              },
+              "b": 0.5
+            }
+          },
+          "closure_mix_5": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": {
+                "node": "n2",
+                "output": "normal"
+              },
+              "b": {
+                "node": "n2",
+                "output": "normal"
+              }
+            }
+          },
+          "closure_mix_6": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": 0.5,
+              "b": 0.5
+            }
+          },
+          "closure_mix_7": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": 0.05000000074505806,
+              "b": 0.0
+            }
+          },
+          "closure_mix_8": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": 0.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_9": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": 1.4500000476837158,
+              "b": 1.45
+            }
+          },
+          "closure_mix_10": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": 0.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_11": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": 1.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_12": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": {
+                "node": "closure_emission_0",
+                "output": "result"
+              },
+              "b": [
+                0,
+                0,
+                0,
+                1
+              ]
+            }
+          },
+          "closure_mix_13": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": 0.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_14": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": 1.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_15": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": 0.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_16": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": 0.029999999329447746,
+              "b": 0.03
+            }
+          },
+          "closure_mix_17": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ],
+              "b": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "closure_mix_18": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": {
+                "node": "n4",
+                "output": "value"
+              },
+              "a": 0.0,
+              "b": 0.0
+            }
+          }
+        },
+        "surface": {
+          "sheen": {
+            "node": "closure_mix_1",
+            "output": "result"
+          },
+          "transmission_roughness": {
+            "node": "closure_mix_2",
+            "output": "result"
+          },
+          "anisotropic": {
+            "node": "closure_mix_3",
+            "output": "result"
+          },
+          "roughness": {
+            "node": "closure_mix_4",
+            "output": "result"
+          },
+          "normal": {
+            "node": "closure_mix_5",
+            "output": "result"
+          },
+          "specular": {
+            "node": "closure_mix_6",
+            "output": "result"
+          },
+          "subsurface_scale": {
+            "node": "closure_mix_7",
+            "output": "result"
+          },
+          "metallic": {
+            "node": "closure_mix_8",
+            "output": "result"
+          },
+          "ior": {
+            "node": "closure_mix_9",
+            "output": "result"
+          },
+          "clearcoat": {
+            "node": "closure_mix_10",
+            "output": "result"
+          },
+          "transmission": {
+            "node": "closure_mix_11",
+            "output": "result"
+          },
+          "emission": {
+            "node": "closure_mix_12",
+            "output": "result"
+          },
+          "anisotropic_rotation": {
+            "node": "closure_mix_13",
+            "output": "result"
+          },
+          "opacity": {
+            "node": "closure_mix_14",
+            "output": "result"
+          },
+          "subsurface": {
+            "node": "closure_mix_15",
+            "output": "result"
+          },
+          "clearcoat_roughness": {
+            "node": "closure_mix_16",
+            "output": "result"
+          },
+          "base_color": {
+            "node": "closure_mix_17",
+            "output": "result"
+          },
+          "thin_walled": 2.0
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Weigth": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Pesa_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Pesa_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Pesa_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_Pesa_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "MrCatPC": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/TodoLowPoly_GatoPC_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/TodoLowPoly_GatoPC_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/TodoLowPoly_GatoPC_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/TodoLowPoly_GatoPC_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          },
+          "n7": {
+            "type": "image_texture",
+            "path": "textures/TodoLowPoly_GatoPC_Emissive.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "closure_emission_1": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": {
+                "node": "n7",
+                "output": "color"
+              },
+              "b": 2.0
+            }
+          },
+          "closure_mix_2": {
+            "type": "mix",
+            "blend_type": "ADD",
+            "inputs": {
+              "factor": 1.0,
+              "a": {
+                "node": "closure_emission_0",
+                "output": "result"
+              },
+              "b": {
+                "node": "closure_emission_1",
+                "output": "result"
+              }
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_mix_2",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        2.0,
+        2.0,
+        2.0
+      ]
+    },
+    "Cloth_Pipes": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_CablesyTela_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_CablesyTela_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_CablesyTela_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly_CablesyTela_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Wheel_Robot": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly2_RobotAsk_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly2_RobotAsk_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly2_RobotAsk_Metallic.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly2_RobotAsk_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          },
+          "n7": {
+            "type": "image_texture",
+            "path": "textures/BaseLowPoly2_RobotAsk_Emissive.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "closure_emission_1": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": {
+                "node": "n7",
+                "output": "color"
+              },
+              "b": 0.30000001192092896
+            }
+          },
+          "closure_mix_2": {
+            "type": "mix",
+            "blend_type": "ADD",
+            "inputs": {
+              "factor": 1.0,
+              "a": {
+                "node": "closure_emission_0",
+                "output": "result"
+              },
+              "b": {
+                "node": "closure_emission_1",
+                "output": "result"
+              }
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_mix_2",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0.30000001192092896,
+        0.30000001192092896,
+        0.30000001192092896
+      ]
+    },
+    "Cat_Helmet": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "n2": {
+            "type": "texture_coordinate"
+          },
+          "n1": {
+            "type": "mapping",
+            "inputs": {
+              "vector": {
+                "node": "n2",
+                "output": "uv"
+              },
+              "location": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ]
+            }
+          },
+          "n0": {
+            "type": "image_texture",
+            "path": "textures/TodoLowPoly_CatHead_BaseColor.png.png",
+            "color_space": "srgb",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n3": {
+            "type": "image_texture",
+            "path": "textures/TodoLowPoly_CatHead_Roughness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n4": {
+            "type": "image_texture",
+            "path": "textures/TodoLowPoly_CatHead_Metalness.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n6": {
+            "type": "image_texture",
+            "path": "textures/TodoLowPoly_CatHead_Normal.png.png",
+            "color_space": "linear",
+            "inputs": {
+              "vector": {
+                "node": "n1",
+                "output": "vector"
+              }
+            }
+          },
+          "n5": {
+            "type": "normal_map",
+            "inputs": {
+              "color": {
+                "node": "n6",
+                "output": "color"
+              },
+              "strength": 1.0
+            }
+          },
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          }
+        },
+        "surface": {
+          "base_color": {
+            "node": "n0",
+            "output": "color"
+          },
+          "roughness": {
+            "node": "n3",
+            "output": "color"
+          },
+          "metallic": {
+            "node": "n4",
+            "output": "color"
+          },
+          "specular": 0.5,
+          "anisotropic": 0.0,
+          "anisotropic_rotation": 0.0,
+          "sheen": 0.0,
+          "clearcoat": 0.0,
+          "clearcoat_roughness": 0.029999999329447746,
+          "ior": 1.4500000476837158,
+          "transmission": 0.0,
+          "subsurface": 0.0,
+          "subsurface_scale": 0.05000000074505806,
+          "normal": {
+            "node": "n5",
+            "output": "normal"
+          },
+          "emission": {
+            "node": "closure_emission_0",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "Light_Block": {
+      "type": "principled",
+      "base_color": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "roughness": 0.0,
+      "metallic": 0.0,
+      "specular": 0.5,
+      "ior": 1.45,
+      "transmission": 0.0,
+      "emission_color": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "emission_strength": 0.0
+    },
+    "Hair": {
+      "type": "shader_graph",
+      "graph": {
+        "nodes": {
+          "closure_emission_0": {
+            "type": "mix",
+            "blend_type": "MULTIPLY",
+            "inputs": {
+              "factor": 1.0,
+              "a": [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "b": 1.0
+            }
+          },
+          "closure_mix_1": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": 0.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_2": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": 0.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_3": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": 0.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_4": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": 0.0,
+              "b": 0.5
+            }
+          },
+          "closure_mix_5": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": 0.5,
+              "b": 0.5
+            }
+          },
+          "closure_mix_6": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": 0.05000000074505806,
+              "b": 0.0
+            }
+          },
+          "closure_mix_7": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": 0.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_8": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": 1.4500000476837158,
+              "b": 1.45
+            }
+          },
+          "closure_mix_9": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": 0.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_10": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": 0.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_11": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_emission_0",
+                "output": "result"
+              },
+              "b": [
+                0,
+                0,
+                0,
+                1
+              ]
+            }
+          },
+          "closure_mix_12": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": 0.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_13": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": 1.0,
+              "b": 1.0
+            }
+          },
+          "closure_mix_14": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": 0.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_15": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": 0.029999999329447746,
+              "b": 0.03
+            }
+          },
+          "closure_mix_16": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": [
+                0.6104959845542908,
+                0.07227200269699097,
+                0.12213899940252304,
+                1.0
+              ],
+              "b": [
+                0.610495924949646,
+                0.20767641067504883,
+                0.29523247480392456,
+                1.0
+              ]
+            }
+          },
+          "closure_mix_17": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": 0.0,
+              "b": 0.0
+            }
+          },
+          "closure_mix_18": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_1",
+                "output": "result"
+              },
+              "b": 0.0
+            }
+          },
+          "closure_mix_19": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_2",
+                "output": "result"
+              },
+              "b": 0.0
+            }
+          },
+          "closure_mix_20": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_3",
+                "output": "result"
+              },
+              "b": 0.0
+            }
+          },
+          "closure_mix_21": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_4",
+                "output": "result"
+              },
+              "b": 0.5
+            }
+          },
+          "closure_mix_22": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_5",
+                "output": "result"
+              },
+              "b": 0.5
+            }
+          },
+          "closure_mix_23": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_6",
+                "output": "result"
+              },
+              "b": 0.0
+            }
+          },
+          "closure_mix_24": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_7",
+                "output": "result"
+              },
+              "b": 0.0
+            }
+          },
+          "closure_mix_25": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_8",
+                "output": "result"
+              },
+              "b": 1.45
+            }
+          },
+          "closure_mix_26": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_9",
+                "output": "result"
+              },
+              "b": 0.0
+            }
+          },
+          "closure_mix_27": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_10",
+                "output": "result"
+              },
+              "b": 0.0
+            }
+          },
+          "closure_mix_28": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_11",
+                "output": "result"
+              },
+              "b": [
+                0,
+                0,
+                0,
+                1
+              ]
+            }
+          },
+          "closure_mix_29": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_12",
+                "output": "result"
+              },
+              "b": 0.0
+            }
+          },
+          "closure_mix_30": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_13",
+                "output": "result"
+              },
+              "b": 1.0
+            }
+          },
+          "closure_mix_31": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_14",
+                "output": "result"
+              },
+              "b": 0.0
+            }
+          },
+          "closure_mix_32": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_15",
+                "output": "result"
+              },
+              "b": 0.03
+            }
+          },
+          "closure_mix_33": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_16",
+                "output": "result"
+              },
+              "b": [
+                0.800000011920929,
+                0.800000011920929,
+                0.800000011920929,
+                1.0
+              ]
+            }
+          },
+          "closure_mix_34": {
+            "type": "mix",
+            "blend_type": "MIX",
+            "inputs": {
+              "factor": 0.5,
+              "a": {
+                "node": "closure_mix_17",
+                "output": "result"
+              },
+              "b": 0.0
+            }
+          }
+        },
+        "surface": {
+          "sheen": {
+            "node": "closure_mix_18",
+            "output": "result"
+          },
+          "transmission_roughness": {
+            "node": "closure_mix_19",
+            "output": "result"
+          },
+          "anisotropic": {
+            "node": "closure_mix_20",
+            "output": "result"
+          },
+          "roughness": {
+            "node": "closure_mix_21",
+            "output": "result"
+          },
+          "specular": {
+            "node": "closure_mix_22",
+            "output": "result"
+          },
+          "subsurface_scale": {
+            "node": "closure_mix_23",
+            "output": "result"
+          },
+          "metallic": {
+            "node": "closure_mix_24",
+            "output": "result"
+          },
+          "ior": {
+            "node": "closure_mix_25",
+            "output": "result"
+          },
+          "clearcoat": {
+            "node": "closure_mix_26",
+            "output": "result"
+          },
+          "transmission": {
+            "node": "closure_mix_27",
+            "output": "result"
+          },
+          "emission": {
+            "node": "closure_mix_28",
+            "output": "result"
+          },
+          "anisotropic_rotation": {
+            "node": "closure_mix_29",
+            "output": "result"
+          },
+          "opacity": {
+            "node": "closure_mix_30",
+            "output": "result"
+          },
+          "subsurface": {
+            "node": "closure_mix_31",
+            "output": "result"
+          },
+          "clearcoat_roughness": {
+            "node": "closure_mix_32",
+            "output": "result"
+          },
+          "base_color": {
+            "node": "closure_mix_33",
+            "output": "result"
+          },
+          "thin_walled": {
+            "node": "closure_mix_34",
+            "output": "result"
+          }
+        }
+      },
+      "emission_hint": [
+        0,
+        0,
+        0
+      ]
+    },
+    "light_Area.027": {
+      "type": "light",
+      "emission": [
+        1.9274218950169304,
+        1.305501626730174,
+        0.7462048980814602
+      ],
+      "two_sided": false,
+      "block_ray": false,
+      "camera_visible": false
+    },
+    "light_Rim_Light_Girl_02": {
+      "type": "light",
+      "emission": [
+        0.6568569623273226,
+        0.44282970789182086,
+        0.2560680053841642
+      ],
+      "two_sided": false,
+      "block_ray": false,
+      "camera_visible": false
+    },
+    "light_Area.020": {
+      "type": "light",
+      "emission": [
+        46.25812247553575,
+        28.42705372255437,
+        20.926661725077675
+      ],
+      "two_sided": false,
+      "block_ray": false,
+      "camera_visible": false
+    },
+    "light_Area.007": {
+      "type": "light",
+      "emission": [
+        46.25812247553575,
+        28.42705372255437,
+        20.926661725077675
+      ],
+      "two_sided": false,
+      "block_ray": false,
+      "camera_visible": false
+    },
+    "light_PO_Box_Red": {
+      "type": "light",
+      "emission": [
+        3.4693592172467436,
+        1.333172893759456,
+        0.9182931320189188
+      ],
+      "two_sided": false,
+      "block_ray": false,
+      "camera_visible": false
+    },
+    "light_Rim_Light_Girl": {
+      "type": "light",
+      "emission": [
+        3.4693592172467436,
+        2.3389191511371856,
+        1.352489119661395
+      ],
+      "two_sided": false,
+      "block_ray": false,
+      "camera_visible": false
+    },
+    "light_Shop_Frontal_Left": {
+      "type": "light",
+      "emission": [
+        24.285514731361697,
+        16.372434199962616,
+        9.46742391974316
+      ],
+      "two_sided": false,
+      "block_ray": false,
+      "camera_visible": false
+    },
+    "light_Bounce_Light_Cat_Head": {
+      "type": "light",
+      "emission": [
+        14.230065314136525,
+        16.350809045759387,
+        17.34679671813719
+      ],
+      "two_sided": false,
+      "block_ray": false,
+      "camera_visible": false
+    },
+    "light_Area_Red_Right": {
+      "type": "light",
+      "emission": [
+        1.250000004512346,
+        0.4273930207422075,
+        0.08559772775674544
+      ],
+      "two_sided": false,
+      "block_ray": false,
+      "camera_visible": false
+    },
+    "light_Background_Blue": {
+      "type": "light",
+      "emission": [
+        0.5294859282143453,
+        2.233210317955887,
+        5.555555422104502
+      ],
+      "two_sided": false,
+      "block_ray": false,
+      "camera_visible": false
+    }
+  },
+  "geometries": {
+    "Background_Pipes_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Background_Pipes_m0.spmesh"
+    },
+    "Background_Pipes_Closer_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Background_Pipes_Closer_m0.spmesh"
+    },
+    "Background_Wall_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Background_Wall_m0.spmesh"
+    },
+    "Background_Cylinders_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Background_Cylinders_m0.spmesh"
+    },
+    "Background_Cube_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Background_Cube_m0.spmesh"
+    },
+    "Gears_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Gears_m0.spmesh"
+    },
+    "Floor_Background_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Floor_Background_m0.spmesh"
+    },
+    "POBox_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/POBox_m0.spmesh"
+    },
+    "Store_Wall_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Store_Wall_m0.spmesh"
+    },
+    "Ceiling_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Ceiling_m0.spmesh"
+    },
+    "Furniture_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Furniture_m0.spmesh"
+    },
+    "Table_cloth_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Table_cloth_m0.spmesh"
+    },
+    "Tools_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Tools_m0.spmesh"
+    },
+    "Ads_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Ads_m0.spmesh"
+    },
+    "Floor_Front_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Floor_Front_m0.spmesh"
+    },
+    "Front_Pipes_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Front_Pipes_m0.spmesh"
+    },
+    "Props_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Props_m0.spmesh"
+    },
+    "Stoplight_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Stoplight_m0.spmesh"
+    },
+    "Table_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Table_m0.spmesh"
+    },
+    "Tickets_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Tickets_m0.spmesh"
+    },
+    "Face_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Face_m0.spmesh"
+    },
+    "Eyes_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Eyes_m0.spmesh"
+    },
+    "Hat_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Hat_m0.spmesh"
+    },
+    "Body_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Body_m0.spmesh"
+    },
+    "Vest_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Vest_m0.spmesh"
+    },
+    "Gloves_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Gloves_m0.spmesh"
+    },
+    "Old_Robots_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Old_Robots_m0.spmesh"
+    },
+    "RadioNes_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/RadioNes_m0.spmesh"
+    },
+    "Cristal_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Cristal_m0.spmesh"
+    },
+    "Weigth_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Weigth_m0.spmesh"
+    },
+    "Old_Robots.001_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Old_Robots.001_m0.spmesh"
+    },
+    "MrCatPC_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/MrCatPC_m0.spmesh"
+    },
+    "Cloth_Pipes_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Cloth_Pipes_m0.spmesh"
+    },
+    "Wheel_Robot_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Wheel_Robot_m0.spmesh"
+    },
+    "Cat_Helmet_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Cat_Helmet_m0.spmesh"
+    },
+    "Light_Block_m0": {
+      "type": "binary_mesh",
+      "path": "meshes/Light_Block_m0.spmesh"
+    },
+    "Face_Churros_Medianos_hair": {
+      "type": "hair",
+      "path": "meshes/Face_Churros_Medianos_hair.spkhair",
+      "radial_segments": 3
+    },
+    "Face_Churros_Grandes_hair": {
+      "type": "hair",
+      "path": "meshes/Face_Churros_Grandes_hair.spkhair",
+      "radial_segments": 3
+    },
+    "__area_light_quad": {
+      "type": "inline_mesh",
+      "positions": [
+        [
+          -0.5,
+          0,
+          0.5
+        ],
+        [
+          0.5,
+          0,
+          0.5
+        ],
+        [
+          0.5,
+          0,
+          -0.5
+        ],
+        [
+          -0.5,
+          0,
+          -0.5
+        ]
+      ],
+      "indices": [
+        0,
+        2,
+        1,
+        0,
+        3,
+        2
+      ]
+    }
+  },
+  "entities": [
+    {
+      "type": "mesh",
+      "geometry": "Background_Pipes_m0",
+      "material": "Background_Pipes",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -13.188972473144531,
+          6.248743057250977,
+          -7.236624717712402,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Background_Pipes_Closer_m0",
+      "material": "Background_Pipes_Closer",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -7.999227046966553,
+          9.34939193725586,
+          -5.507091522216797,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Background_Wall_m0",
+      "material": "Background_Wall",
+      "transform": {
+        "matrix": [
+          6.364976406097412,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -2.782219610253378e-07,
+          -6.364976406097412,
+          0.0,
+          0.0,
+          6.364976406097412,
+          -2.782219610253378e-07,
+          0.0,
+          -23.640724182128906,
+          6.151040077209473,
+          -10.100605010986328,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Background_Cylinders_m0",
+      "material": "Background_Cylinders",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -19.02092170715332,
+          3.6276509761810303,
+          -8.171881675720215,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Background_Cube_m0",
+      "material": "Background_Cube",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -12.949102401733398,
+          8.676192283630371,
+          -7.018372535705566,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Gears_m0",
+      "material": "Gears",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -6.533952713012695,
+          6.164857864379883,
+          -2.851870536804199,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Floor_Background_m0",
+      "material": "Floor_Background",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -0.2569009065628052,
+          -0.0012175273150205612,
+          1.9018316268920898,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "POBox_m0",
+      "material": "POBox",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -1.2014223337173462,
+          4.454977512359619,
+          -1.8509244918823242,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Store_Wall_m0",
+      "material": "Store_Wall",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.5663901567459106,
+          5.097898483276367,
+          -1.403348684310913,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Ceiling_m0",
+      "material": "Ceiling",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.5663901567459106,
+          5.097898483276367,
+          -1.403348684310913,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Furniture_m0",
+      "material": "Furniture",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -0.8053775429725647,
+          0.027333617210388184,
+          2.460265636444092,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Table_cloth_m0",
+      "material": "Table_cloth",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -0.7997557520866394,
+          2.024141788482666,
+          0.9789930582046509,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Tools_m0",
+      "material": "Tools",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -1.3989613056182861,
+          2.1488490104675293,
+          0.34875166416168213,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Ads_m0",
+      "material": "Ads",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -1.20073401927948,
+          1.3251789808273315,
+          1.0429019927978516,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Floor_Front_m0",
+      "material": "Floor_Front",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -0.2569009065628052,
+          -0.0012175273150205612,
+          1.9018316268920898,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Front_Pipes_m0",
+      "material": "Front_Pipes.001",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -2.015850305557251,
+          3.0964314937591553,
+          0.006297767162322998,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Props_m0",
+      "material": "Props",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -1.2792725563049316,
+          2.343447685241699,
+          -0.7148571014404297,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Stoplight_m0",
+      "material": "Stoplight",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          2.029956817626953,
+          4.479802131652832,
+          -0.2602240741252899,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Table_m0",
+      "material": "Table",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.06778886914253235,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Tickets_m0",
+      "material": "Tickets",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -2.015850305557251,
+          3.0964314937591553,
+          0.006297767162322998,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Face_m0",
+      "material": "Face",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.13988786935806274,
+          3.194822311401367,
+          -0.16336490213871002,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Eyes_m0",
+      "material": "Eyes",
+      "transform": {
+        "matrix": [
+          0.15462231636047363,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.15462231636047363,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.15462231636047363,
+          0.0,
+          0.33662331104278564,
+          3.152249336242676,
+          0.12225610017776489,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Hat_m0",
+      "material": "Hat",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.24783603847026825,
+          3.8178300857543945,
+          -0.18806561827659607,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Body_m0",
+      "material": "Body",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.13418859243392944,
+          2.9299890995025635,
+          -0.4255739152431488,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Vest_m0",
+      "material": "Vest",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.3557173013687134,
+          2.632256507873535,
+          -0.539318323135376,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Gloves_m0",
+      "material": "Gloves",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.736589789390564,
+          2.2795333862304688,
+          0.619489312171936,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Old_Robots_m0",
+      "material": "Old_Robots",
+      "transform": {
+        "matrix": [
+          0.05563325807452202,
+          -0.021919429302215576,
+          -0.00027321954257786274,
+          0.0,
+          0.015362787991762161,
+          0.039517562836408615,
+          -0.04216565936803818,
+          0.0,
+          0.01563716121017933,
+          0.03915988653898239,
+          0.04239785671234131,
+          0.0,
+          3.2248661518096924,
+          1.7684017419815063,
+          -0.28385576605796814,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "RadioNes_m0",
+      "material": "RadioNes",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.5026187300682068,
+          0.009377553127706051,
+          2.5540006160736084,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Cristal_m0",
+      "material": "Cristal",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          3.081188917160034,
+          1.680916428565979,
+          -0.2042018473148346,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Weigth_m0",
+      "material": "Weigth",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -0.12470202147960663,
+          0.7651323080062866,
+          1.0605419874191284,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Old_Robots.001_m0",
+      "material": "Old_Robots",
+      "transform": {
+        "matrix": [
+          -0.05563325062394142,
+          0.021919451653957367,
+          -0.00027321360539644957,
+          0.0,
+          -0.015362802892923355,
+          -0.03951754420995712,
+          -0.04216567054390907,
+          0.0,
+          -0.015637176111340523,
+          -0.03915989398956299,
+          0.04239784553647041,
+          0.0,
+          2.569509267807007,
+          0.983712911605835,
+          -0.26644882559776306,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "MrCatPC_m0",
+      "material": "MrCatPC",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          1.1105951070785522,
+          0.9600304961204529,
+          2.360720157623291,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Cloth_Pipes_m0",
+      "material": "Cloth_Pipes",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          3.7952394485473633,
+          0.25865885615348816,
+          2.1369752883911133,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Wheel_Robot_m0",
+      "material": "Wheel_Robot",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          -1.8148523569107056,
+          0.5405511856079102,
+          3.151557445526123,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Cat_Helmet_m0",
+      "material": "Cat_Helmet",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          3.1032118797302246,
+          0.6532372236251831,
+          2.149739980697632,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Light_Block_m0",
+      "material": "Light_Block",
+      "transform": {
+        "matrix": [
+          1.9470718370939721e-07,
+          -1.0,
+          0.0,
+          0.0,
+          1.0,
+          1.9470718370939721e-07,
+          -1.343588280633412e-07,
+          0.0,
+          1.343588280633412e-07,
+          2.616062951660801e-14,
+          1.0,
+          0.0,
+          -3.0274672508239746,
+          1.1284096240997314,
+          -4.477790355682373,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Face_Churros_Medianos_hair",
+      "material": "Hair",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "Face_Churros_Grandes_hair",
+      "material": "Hair",
+      "transform": {
+        "matrix": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "raster_light": false
+    },
+    {
+      "type": "mesh",
+      "geometry": "__area_light_quad",
+      "material": "light_Area.027",
+      "transform": {
+        "matrix": [
+          9.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          10.0,
+          0.0,
+          0.4226672649383545,
+          5.877476215362549,
+          0.8823487758636475,
+          1.0
+        ]
+      },
+      "raster_light": true
+    },
+    {
+      "type": "mesh",
+      "geometry": "__area_light_quad",
+      "material": "light_Rim_Light_Girl_02",
+      "transform": {
+        "matrix": [
+          -1.5109506845474243,
+          9.159980982076377e-05,
+          0.5982531905174255,
+          0.0,
+          -0.34196993708610535,
+          0.37015464901924133,
+          -0.8637372851371765,
+          0.0,
+          -0.22152532637119293,
+          -1.5096490383148193,
+          -0.5592541098594666,
+          0.0,
+          0.7081051468849182,
+          3.505260944366455,
+          -1.2738759517669678,
+          1.0
+        ]
+      },
+      "raster_light": true
+    },
+    {
+      "type": "mesh",
+      "geometry": "__area_light_quad",
+      "material": "light_Area.020",
+      "transform": {
+        "matrix": [
+          0.30000001192092896,
+          3.467550442691861e-23,
+          -1.332267550140849e-16,
+          0.0,
+          4.852941022465036e-23,
+          -1.0,
+          -1.5099580252808664e-07,
+          0.0,
+          -1.1102229584507075e-17,
+          3.774895063202166e-09,
+          -0.02500000037252903,
+          0.0,
+          0.182856947183609,
+          1.0831751823425293,
+          1.0840378999710083,
+          1.0
+        ]
+      },
+      "raster_light": true
+    },
+    {
+      "type": "mesh",
+      "geometry": "__area_light_quad",
+      "material": "light_Area.007",
+      "transform": {
+        "matrix": [
+          0.30000001192092896,
+          3.467550442691861e-23,
+          -1.332267550140849e-16,
+          0.0,
+          4.852941022465036e-23,
+          -1.0,
+          -1.5099580252808664e-07,
+          0.0,
+          -1.1102229584507075e-17,
+          3.774895063202166e-09,
+          -0.02500000037252903,
+          0.0,
+          -0.44278934597969055,
+          1.0831751823425293,
+          1.0840378999710083,
+          1.0
+        ]
+      },
+      "raster_light": true
+    },
+    {
+      "type": "point_light",
+      "position": [
+        -2.3943982124328613,
+        2.0704801082611084,
+        2.436001777648926
+      ],
+      "color": [
+        0.5711249709129333,
+        0.6514057517051697,
+        0.6938718557357788
+      ],
+      "strength": 300.0,
+      "radius": 1.0,
+      "soft_falloff": true
+    },
+    {
+      "type": "point_light",
+      "position": [
+        1.2313119173049927,
+        0.2223830223083496,
+        1.8591402769088745
+      ],
+      "color": [
+        0.6938718557357788,
+        0.4677838385105133,
+        0.2704978287220001
+      ],
+      "strength": 30.0,
+      "radius": 1.0,
+      "soft_falloff": true
+    },
+    {
+      "type": "mesh",
+      "geometry": "__area_light_quad",
+      "material": "light_PO_Box_Red",
+      "transform": {
+        "matrix": [
+          1.0,
+          -2.167377052824667e-16,
+          -2.7029954253451676e-16,
+          0.0,
+          2.1673790380581371e-16,
+          -0.2173205465078354,
+          0.9761002659797668,
+          0.0,
+          -2.7029938371583915e-16,
+          -0.9761002659797668,
+          -0.2173205465078354,
+          0.0,
+          -1.7207485437393188,
+          2.935887336730957,
+          -1.1729481220245361,
+          1.0
+        ]
+      },
+      "raster_light": true
+    },
+    {
+      "type": "point_light",
+      "position": [
+        1.3726246356964111,
+        0.9038752317428589,
+        1.460702896118164
+      ],
+      "color": [
+        0.6938718557357788,
+        0.4677838385105133,
+        0.2704978287220001
+      ],
+      "strength": 12.0,
+      "radius": 1.0,
+      "soft_falloff": true
+    },
+    {
+      "type": "point_light",
+      "position": [
+        1.823638677597046,
+        0.9038752317428589,
+        1.3431658744812012
+      ],
+      "color": [
+        0.6938718557357788,
+        0.4677838385105133,
+        0.2704978287220001
+      ],
+      "strength": 12.0,
+      "radius": 1.0,
+      "soft_falloff": true
+    },
+    {
+      "type": "point_light",
+      "position": [
+        1.594031572341919,
+        0.9038752317428589,
+        1.3923673629760742
+      ],
+      "color": [
+        0.6938718557357788,
+        0.4677838385105133,
+        0.2704978287220001
+      ],
+      "strength": 12.0,
+      "radius": 1.0,
+      "soft_falloff": true
+    },
+    {
+      "type": "mesh",
+      "geometry": "__area_light_quad",
+      "material": "light_Rim_Light_Girl",
+      "transform": {
+        "matrix": [
+          -1.0,
+          2.171795721039871e-08,
+          -0.0001521984813734889,
+          0.0,
+          0.0001521984813734889,
+          -4.371138828673793e-08,
+          -1.0,
+          0.0,
+          -2.1724609666762262e-08,
+          -1.0,
+          4.3708084263016644e-08,
+          0.0,
+          1.2596335411071777,
+          2.857988119125366,
+          -1.2713420391082764,
+          1.0
+        ]
+      },
+      "raster_light": true
+    },
+    {
+      "type": "mesh",
+      "geometry": "__area_light_quad",
+      "material": "light_Shop_Frontal_Left",
+      "transform": {
+        "matrix": [
+          0.5,
+          -1.1102236863696466e-16,
+          1.1102228922762585e-16,
+          0.0,
+          2.220447372739293e-16,
+          1.0,
+          4.930383008620025e-32,
+          0.0,
+          -1.1102228922762585e-16,
+          0.0,
+          0.5,
+          0.0,
+          -3.195827007293701,
+          4.91237735748291,
+          -0.2226923555135727,
+          1.0
+        ]
+      },
+      "raster_light": true
+    },
+    {
+      "type": "point_light",
+      "position": [
+        -1.1992298364639282,
+        0.1804725080728531,
+        2.9859492778778076
+      ],
+      "color": [
+        0.6297382116317749,
+        0.6737804412841797,
+        0.6938718557357788
+      ],
+      "strength": 10.0,
+      "radius": 1.0,
+      "soft_falloff": true
+    },
+    {
+      "type": "mesh",
+      "geometry": "__area_light_quad",
+      "material": "light_Bounce_Light_Cat_Head",
+      "transform": {
+        "matrix": [
+          0.25,
+          -5.5511134687645576e-17,
+          -5.551117770103743e-17,
+          0.0,
+          2.220447108041497e-16,
+          -4.371138828673793e-08,
+          1.0,
+          0.0,
+          -4.440891039709442e-16,
+          -2.0,
+          -8.742277657347586e-08,
+          0.0,
+          5.291011810302734,
+          3.4155611991882324,
+          5.113537311553955,
+          1.0
+        ]
+      },
+      "raster_light": true
+    },
+    {
+      "type": "point_light",
+      "position": [
+        -8.516979217529297,
+        3.8084731101989746,
+        5.113537788391113
+      ],
+      "color": [
+        0.6938718557357788,
+        0.4699805676937103,
+        0.26863375306129456
+      ],
+      "strength": 750.0,
+      "radius": 1.0,
+      "soft_falloff": true
+    },
+    {
+      "type": "mesh",
+      "geometry": "__area_light_quad",
+      "material": "light_Area_Red_Right",
+      "transform": {
+        "matrix": [
+          -17.703689575195312,
+          -24.21940040588379,
+          -7.217206984933e-06,
+          0.0,
+          0.8073133230209351,
+          -0.5901229977607727,
+          -2.1139221928478946e-07,
+          0.0,
+          8.607526069681626e-07,
+          -9.568970199325122e-06,
+          30.0,
+          0.0,
+          17.01082420349121,
+          0.2544330656528473,
+          -13.949943542480469,
+          1.0
+        ]
+      },
+      "raster_light": true
+    },
+    {
+      "type": "mesh",
+      "geometry": "__area_light_quad",
+      "material": "light_Background_Blue",
+      "transform": {
+        "matrix": [
+          21.213205337524414,
+          21.21320152282715,
+          -1.112934910452168e-06,
+          0.0,
+          -0.7071067094802856,
+          0.7071068286895752,
+          -3.709782347982582e-08,
+          0.0,
+          3.4852958193110073e-13,
+          1.5739275340820313e-06,
+          30.0,
+          0.0,
+          -62.37548065185547,
+          45.2467041015625,
+          -5.761997222900391,
+          1.0
+        ]
+      },
+      "raster_light": true
+    }
+  ]
+}
