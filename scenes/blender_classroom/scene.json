@@ -9775,9 +9775,9 @@
       "type": "binary_mesh",
       "path": "meshes/Text.001_m0.spmesh"
     },
-    "blackboardLamp_m0": {
+    "blackboard_lamp_emitter_m0": {
       "type": "binary_mesh",
-      "path": "meshes/blackboardLamp_m0.spmesh"
+      "path": "meshes/blackboard_lamp_emitter_m0.spmesh"
     },
     "boardFrame_m0": {
       "type": "binary_mesh",
@@ -10247,9 +10247,9 @@
       "type": "binary_mesh",
       "path": "meshes/thumbtack.003_m1.spmesh"
     },
-    "blackBoardLamp_m0": {
+    "blackboard_lamp_fixture_m0": {
       "type": "binary_mesh",
-      "path": "meshes/blackBoardLamp_m0.spmesh"
+      "path": "meshes/blackboard_lamp_fixture_m0.spmesh"
     },
     "ceiling_m0": {
       "type": "binary_mesh",
@@ -14064,7 +14064,7 @@
     },
     {
       "type": "mesh",
-      "geometry": "blackboardLamp_m0",
+      "geometry": "blackboard_lamp_emitter_m0",
       "material": "blackBoardLight",
       "transform": {
         "matrix": [
@@ -17184,7 +17184,7 @@
     },
     {
       "type": "mesh",
-      "geometry": "blackBoardLamp_m0",
+      "geometry": "blackboard_lamp_fixture_m0",
       "material": "white_glossPaint",
       "transform": {
         "matrix": [
