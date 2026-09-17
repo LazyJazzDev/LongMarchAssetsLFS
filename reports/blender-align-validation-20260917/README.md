@@ -4,6 +4,28 @@
 
 环境：Windows、RTX 3090 Ti、NVIDIA 596.49、MSVC 19.44、Vulkan SDK 1.4.321.0，Release。构建使用 `CL=/D_USE_MATH_DEFINES` 适配现有 hair 代码的 `M_PI`。
 
+## Sparkium 框架层面的修改汇总
+
+以下按代码层次汇总，区分 **PR HEAD 已有实现** 与 **本轮验证的未提交本地改动**。PR 增量以 `cf2faf940f5eeeb014cacbf3ce9a403ab1ad41b6...42d5d74cc5bf53c7e5aa9144844399a9a0753569` 为准；已在 main 中的 Ray Query 基础设施不重复计作本 PR 新增。
+
+| 层次 | PR 已有的修改 | 对框架行为的影响 |
+|---|---|---|
+| 后端能力与管线选择 | D3D12 按 DXR Tier 1.1 检测 Ray Query；Vulkan 接入设备的 Ray Query 支持检测。旧场景显式请求 RT、设备不支持完整 RT 时，优先转为 Ray Query | 保持旧场景可用，并尽可能采用原生遍历。Auto 的 RT → Ray Query → Fallback 顺序属于已有基础设施 |
+| 场景与几何接口 | JSON 加载器扩展 Blender 场景数据，增加 `SPKMESH1` 二进制网格、`SPKHAIR1` 毛发数据读取与校验；增加 Hair 几何并三角化，传递顶点颜色等属性 | 将导出数据纳入统一的 Scene／Geometry／Material 对象体系，供不同追踪路径使用 |
+| 材质图与编译组织 | 新增 Shader Graph 材质及节点到 HLSL 的生成；通过 `GraphSurface` 表达求值结果。计算追踪路径把各材质图求值与共享的 `SampleGraphSurface` BSDF 采样分离，无材质图时保留紧凑分派 | 避免每个材质图都复制完整 BSDF 采样实现，减少生成代码与编译负担；Ray Query 和 Fallback 复用该组织方式 |
+| 着色与路径状态 | 扩展 Principled／材质图着色、透明阴影、薄壁透射、次表面随机游走，以及命中属性与射线类型信息 | 让 RT 与计算追踪路径表达相同的材质与路径语义；是否数值一致由下文矩阵验证，而非仅凭共享代码判断 |
+| 光源、相机与成像 | 扩展光源参数与采样；Camera 增加光圈半径、焦距和光圈形状；Film 增加显示变换、曝光、gamma、对比度及 tone-mapping 参数缓冲 | 将 Blender 导出的光照、景深和显示设置接入渲染框架，区分线性辐亮度积累与最终显示输出 |
+
+主要代码入口：[场景加载与材质图生成](https://github.com/LazyJazzDev/LongMarch/blob/42d5d74cc5bf53c7e5aa9144844399a9a0753569/code/sparkium/scene_io/json_scene.cpp)、[计算追踪材质编译](https://github.com/LazyJazzDev/LongMarch/blob/42d5d74cc5bf53c7e5aa9144844399a9a0753569/code/sparkium/pipelines/raytracing/core/software_pipeline.cpp)、[共享材质图采样](https://github.com/LazyJazzDev/LongMarch/blob/42d5d74cc5bf53c7e5aa9144844399a9a0753569/code/sparkium/shaders/material/shader_graph/surface_sampler.hlsli)、[次表面随机游走](https://github.com/LazyJazzDev/LongMarch/blob/42d5d74cc5bf53c7e5aa9144844399a9a0753569/code/sparkium/shaders/subsurface_random_walk.hlsli)。本节描述实现范围，不增加 Metal 或其他设备的 Windows 验证结论，也不声称 Ray Query 在任意场景都比完整 RT 更快。
+
+| 本轮本地改动（尚未提交到 PR） | 修改位置与机制 | 验证用途 |
+|---|---|---|
+| 稳定实体注册顺序 | `core/scene.h/.cpp` 增加 `GetEntityOrder()` 和注册顺序数组；首次插入时追加，删除时同步移除。RT 与 raster 场景适配层按该顺序更新后端实体，保留原 map 的查询与缓存用途 | 消除地址顺序引起的实例／灯光排序及灯光 CDF 随机数映射变化；新增反转实体地址顺序的回归测试 |
+| 非阻挡灯光的阴影语义 | 灯光 sampler 增加 `SAMPLE_SHADOW_ANY_HIT`／`SampleShadowOpacity`；RT core 编译缓存 `mesh_light_shadow_ahit`，实体层绑定到灯光 shadow hit group。非阻挡灯光在 any-hit 中继续遍历，阻挡命中将可见度归零 | 使完整 RT 正确发现非阻挡灯光后方的遮挡物，与计算路径已有 opacity 接口一致；使用遮挡、无遮挡及阻挡灯光三组控制场景验证 |
+| 线性输出与回归工具 | CLI 增加 `--checkpoint-dir`，在 2 的幂次及最终帧输出显示变换前的线性 RGBA float32；GPU 测试增加后端／debug 环境选择；增加 `check_render_matrix.py` 与 `render_matrix_fixtures.py` | 检查实际管线、原生查询计数、有限像素、重复性和分批积累，并将执行成功与 HDR 收敛诊断分开记录 |
+
+上述 raster 实体顺序适配属于已存在的本地一致性修复，不表示光栅化材质图崩溃已修复。Fallback 和光栅化失败继续按用户要求暂缓；本次报告更新仅发布文字，未提交或推送这些渲染器源码改动。
+
 ## 结果
 
 | 范围 | 执行结果 |
