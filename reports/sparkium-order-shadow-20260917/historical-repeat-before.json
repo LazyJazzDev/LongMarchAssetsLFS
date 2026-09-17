@@ -1,0 +1,29 @@
+[
+  {
+    "label": "vulkan-ray_tracing",
+    "rmse": 0.058657392623898554,
+    "relative_rmse": 0.08188743864317882,
+    "relative_mae": 0.03304897065333824,
+    "relative_mean_bias": 0.0003845533835473425,
+    "relative_rgb_mean_bias": 0.0005440613237433912,
+    "relative_block_mae": 0.006917284606476541
+  },
+  {
+    "label": "vulkan-ray_query",
+    "rmse": 0.0585110591865487,
+    "relative_rmse": 0.08168302582613259,
+    "relative_mae": 0.033023434984211515,
+    "relative_mean_bias": 0.0003358051174843467,
+    "relative_rgb_mean_bias": 0.00044661400394490865,
+    "relative_block_mae": 0.006780427362377071
+  },
+  {
+    "label": "vulkan-rt_fallback",
+    "rmse": 0.059034453470642574,
+    "relative_rmse": 0.08237263729378916,
+    "relative_mae": 0.03340689706882641,
+    "relative_mean_bias": 0.0003288424818471891,
+    "relative_rgb_mean_bias": 0.00044392396012230787,
+    "relative_block_mae": 0.007101446687349791
+  }
+]

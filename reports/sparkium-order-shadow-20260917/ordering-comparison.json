@@ -1,0 +1,12 @@
+[
+  {
+    "configuration": "Before: 96 x 96 / 256 spp / 12 bounces",
+    "identical": false,
+    "max_abs_rgb": 0.5614219903945923
+  },
+  {
+    "configuration": "After: 64 x 64 / 256 spp / 16 bounces",
+    "identical": true,
+    "max_abs_rgb": 0.0
+  }
+]
