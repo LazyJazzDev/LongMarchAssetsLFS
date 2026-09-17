@@ -1,0 +1,368 @@
+{
+  "d3d12": {
+    "totals": {
+      "tests": "16",
+      "failures": "0",
+      "disabled": "0",
+      "errors": "0",
+      "time": "55.617",
+      "timestamp": "2026-09-17T08:39:04.424",
+      "name": "AllTests"
+    },
+    "cases": [
+      {
+        "name": "LightSamplingIsIndependentOfEntityAddresses",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "50",
+        "status": "run",
+        "result": "completed",
+        "time": "5.418",
+        "timestamp": "2026-09-17T08:39:04.424",
+        "classname": "SoftwareBVHTest"
+      },
+      {
+        "name": "NonblockingEmittersDoNotHideShadowOccluders",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "110",
+        "status": "run",
+        "result": "completed",
+        "time": "4.588",
+        "timestamp": "2026-09-17T08:39:09.842",
+        "classname": "SoftwareBVHTest"
+      },
+      {
+        "name": "RayQueryCapabilityMatchesDevice",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "159",
+        "status": "run",
+        "result": "completed",
+        "time": "1.386",
+        "timestamp": "2026-09-17T08:39:14.431",
+        "classname": "SoftwareBVHTest"
+      },
+      {
+        "name": "SharedShadersCompileForNativeRayTracingAndCompute",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "502",
+        "status": "run",
+        "result": "completed",
+        "time": "11.741",
+        "timestamp": "2026-09-17T08:39:15.817",
+        "classname": "SoftwareBVHTest"
+      },
+      {
+        "name": "RasterPointLightsLeaveEmptyBackgroundUnchanged",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "541",
+        "status": "run",
+        "result": "completed",
+        "time": "1.383",
+        "timestamp": "2026-09-17T08:39:27.559",
+        "classname": "SoftwareBVHTest"
+      },
+      {
+        "name": "HardwareImageParity",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "556",
+        "status": "run",
+        "result": "completed",
+        "time": "3.554",
+        "timestamp": "2026-09-17T08:39:28.943",
+        "classname": "SoftwareBVHTest"
+      },
+      {
+        "name": "ComputeConstructionAndTraversalMatchDoublePrecisionOracle/0",
+        "value_param": "(1, false)",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "226",
+        "status": "run",
+        "result": "completed",
+        "time": "2.95",
+        "timestamp": "2026-09-17T08:39:32.497",
+        "classname": "TreeSizes/SoftwareBVHSizeTest"
+      },
+      {
+        "name": "ComputeConstructionAndTraversalMatchDoublePrecisionOracle/1",
+        "value_param": "(1, true)",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "226",
+        "status": "run",
+        "result": "completed",
+        "time": "2.5",
+        "timestamp": "2026-09-17T08:39:35.448",
+        "classname": "TreeSizes/SoftwareBVHSizeTest"
+      },
+      {
+        "name": "ComputeConstructionAndTraversalMatchDoublePrecisionOracle/2",
+        "value_param": "(5, false)",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "226",
+        "status": "run",
+        "result": "completed",
+        "time": "2.775",
+        "timestamp": "2026-09-17T08:39:37.948",
+        "classname": "TreeSizes/SoftwareBVHSizeTest"
+      },
+      {
+        "name": "ComputeConstructionAndTraversalMatchDoublePrecisionOracle/3",
+        "value_param": "(5, true)",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "226",
+        "status": "run",
+        "result": "completed",
+        "time": "2.589",
+        "timestamp": "2026-09-17T08:39:40.724",
+        "classname": "TreeSizes/SoftwareBVHSizeTest"
+      },
+      {
+        "name": "ComputeConstructionAndTraversalMatchDoublePrecisionOracle/4",
+        "value_param": "(257, false)",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "226",
+        "status": "run",
+        "result": "completed",
+        "time": "2.966",
+        "timestamp": "2026-09-17T08:39:43.313",
+        "classname": "TreeSizes/SoftwareBVHSizeTest"
+      },
+      {
+        "name": "ComputeConstructionAndTraversalMatchDoublePrecisionOracle/5",
+        "value_param": "(257, true)",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "226",
+        "status": "run",
+        "result": "completed",
+        "time": "2.893",
+        "timestamp": "2026-09-17T08:39:46.280",
+        "classname": "TreeSizes/SoftwareBVHSizeTest"
+      },
+      {
+        "name": "EmptySceneBackgroundAccumulationAndReset/0",
+        "value_param": "false",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "365",
+        "status": "run",
+        "result": "completed",
+        "time": "2.695",
+        "timestamp": "2026-09-17T08:39:49.174",
+        "classname": "TraversalModes/ComputeTraversalTest"
+      },
+      {
+        "name": "EmptySceneBackgroundAccumulationAndReset/1",
+        "value_param": "true",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "365",
+        "status": "run",
+        "result": "completed",
+        "time": "2.919",
+        "timestamp": "2026-09-17T08:39:51.869",
+        "classname": "TraversalModes/ComputeTraversalTest"
+      },
+      {
+        "name": "TransparentShadowLayers/0",
+        "value_param": "false",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "426",
+        "status": "run",
+        "result": "completed",
+        "time": "2.704",
+        "timestamp": "2026-09-17T08:39:54.788",
+        "classname": "TraversalModes/ComputeTraversalTest"
+      },
+      {
+        "name": "TransparentShadowLayers/1",
+        "value_param": "true",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "426",
+        "status": "run",
+        "result": "completed",
+        "time": "2.548",
+        "timestamp": "2026-09-17T08:39:57.493",
+        "classname": "TraversalModes/ComputeTraversalTest"
+      }
+    ]
+  },
+  "vulkan": {
+    "totals": {
+      "tests": "16",
+      "failures": "0",
+      "disabled": "0",
+      "errors": "0",
+      "time": "88.936",
+      "timestamp": "2026-09-17T08:39:15.048",
+      "name": "AllTests"
+    },
+    "cases": [
+      {
+        "name": "LightSamplingIsIndependentOfEntityAddresses",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "50",
+        "status": "run",
+        "result": "completed",
+        "time": "7.841",
+        "timestamp": "2026-09-17T08:39:15.048",
+        "classname": "SoftwareBVHTest"
+      },
+      {
+        "name": "NonblockingEmittersDoNotHideShadowOccluders",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "110",
+        "status": "run",
+        "result": "completed",
+        "time": "7.336",
+        "timestamp": "2026-09-17T08:39:22.890",
+        "classname": "SoftwareBVHTest"
+      },
+      {
+        "name": "RayQueryCapabilityMatchesDevice",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "159",
+        "status": "run",
+        "result": "completed",
+        "time": "2.167",
+        "timestamp": "2026-09-17T08:39:30.226",
+        "classname": "SoftwareBVHTest"
+      },
+      {
+        "name": "SharedShadersCompileForNativeRayTracingAndCompute",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "502",
+        "status": "run",
+        "result": "completed",
+        "time": "11.653",
+        "timestamp": "2026-09-17T08:39:32.394",
+        "classname": "SoftwareBVHTest"
+      },
+      {
+        "name": "RasterPointLightsLeaveEmptyBackgroundUnchanged",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "541",
+        "status": "run",
+        "result": "completed",
+        "time": "1.881",
+        "timestamp": "2026-09-17T08:39:44.047",
+        "classname": "SoftwareBVHTest"
+      },
+      {
+        "name": "HardwareImageParity",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "556",
+        "status": "run",
+        "result": "completed",
+        "time": "6.012",
+        "timestamp": "2026-09-17T08:39:45.928",
+        "classname": "SoftwareBVHTest"
+      },
+      {
+        "name": "ComputeConstructionAndTraversalMatchDoublePrecisionOracle/0",
+        "value_param": "(1, false)",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "226",
+        "status": "run",
+        "result": "completed",
+        "time": "5.014",
+        "timestamp": "2026-09-17T08:39:51.941",
+        "classname": "TreeSizes/SoftwareBVHSizeTest"
+      },
+      {
+        "name": "ComputeConstructionAndTraversalMatchDoublePrecisionOracle/1",
+        "value_param": "(1, true)",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "226",
+        "status": "run",
+        "result": "completed",
+        "time": "4.731",
+        "timestamp": "2026-09-17T08:39:56.955",
+        "classname": "TreeSizes/SoftwareBVHSizeTest"
+      },
+      {
+        "name": "ComputeConstructionAndTraversalMatchDoublePrecisionOracle/2",
+        "value_param": "(5, false)",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "226",
+        "status": "run",
+        "result": "completed",
+        "time": "4.489",
+        "timestamp": "2026-09-17T08:40:01.687",
+        "classname": "TreeSizes/SoftwareBVHSizeTest"
+      },
+      {
+        "name": "ComputeConstructionAndTraversalMatchDoublePrecisionOracle/3",
+        "value_param": "(5, true)",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "226",
+        "status": "run",
+        "result": "completed",
+        "time": "4.23",
+        "timestamp": "2026-09-17T08:40:06.176",
+        "classname": "TreeSizes/SoftwareBVHSizeTest"
+      },
+      {
+        "name": "ComputeConstructionAndTraversalMatchDoublePrecisionOracle/4",
+        "value_param": "(257, false)",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "226",
+        "status": "run",
+        "result": "completed",
+        "time": "4.696",
+        "timestamp": "2026-09-17T08:40:10.406",
+        "classname": "TreeSizes/SoftwareBVHSizeTest"
+      },
+      {
+        "name": "ComputeConstructionAndTraversalMatchDoublePrecisionOracle/5",
+        "value_param": "(257, true)",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "226",
+        "status": "run",
+        "result": "completed",
+        "time": "6.841",
+        "timestamp": "2026-09-17T08:40:15.103",
+        "classname": "TreeSizes/SoftwareBVHSizeTest"
+      },
+      {
+        "name": "EmptySceneBackgroundAccumulationAndReset/0",
+        "value_param": "false",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "365",
+        "status": "run",
+        "result": "completed",
+        "time": "8.187",
+        "timestamp": "2026-09-17T08:40:21.945",
+        "classname": "TraversalModes/ComputeTraversalTest"
+      },
+      {
+        "name": "EmptySceneBackgroundAccumulationAndReset/1",
+        "value_param": "true",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "365",
+        "status": "run",
+        "result": "completed",
+        "time": "6.516",
+        "timestamp": "2026-09-17T08:40:30.133",
+        "classname": "TraversalModes/ComputeTraversalTest"
+      },
+      {
+        "name": "TransparentShadowLayers/0",
+        "value_param": "false",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "426",
+        "status": "run",
+        "result": "completed",
+        "time": "3.875",
+        "timestamp": "2026-09-17T08:40:36.649",
+        "classname": "TraversalModes/ComputeTraversalTest"
+      },
+      {
+        "name": "TransparentShadowLayers/1",
+        "value_param": "true",
+        "file": "C:\\Users\\zijian\\LongMarch\\blender-align-validation\\test\\sparkium\\fallback_test.cpp",
+        "line": "426",
+        "status": "run",
+        "result": "completed",
+        "time": "3.46",
+        "timestamp": "2026-09-17T08:40:40.524",
+        "classname": "TraversalModes/ComputeTraversalTest"
+      }
+    ]
+  }
+}

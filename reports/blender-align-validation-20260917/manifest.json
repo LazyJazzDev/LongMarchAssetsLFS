@@ -1,0 +1,23 @@
+{
+  "base_commit": "42d5d74cc5bf53c7e5aa9144844399a9a0753569",
+  "assets_commit": "07f7bd6670d836afe93e0a0f26caec913a19bca6",
+  "platform": "Windows / RTX 3090 Ti / NVIDIA 596.49",
+  "configuration": "Release, MSVC 19.44, Vulkan SDK 1.4.321.0",
+  "build_environment": "CL=/D_USE_MATH_DEFINES",
+  "binaries": {
+    "build/demo/sparkium_cli/Release/demo_sparkium_cli.exe": "d02ee508eb96e399740aa2da79dac99e5122158710ee43ac8163557f4b2d8f30",
+    "build/demo/sparkium_gui/Release/demo_sparkium_gui.exe": "98d01b6a5c2cd5f71ba957242e051273597ba61a260f9b065117199656247b2f",
+    "build/test/sparkium/Release/sparkium_fallback_test.exe": "d33a9e4d0f1f81e12ce47e5ead13adc827442fcdf7fe22ab07468cd388182be1"
+  },
+  "changed_sources": {
+    "code/sparkium/core/scene.cpp": "48737b12b9a896d10eb6f459411479b400c18d7fea21541e5c155af9576bf99e",
+    "code/sparkium/core/scene.h": "135ac0f0704ad73e6a6b72cb071ced5429343ec46ab538379e27c053aecfcc3d",
+    "code/sparkium/pipelines/raster/core/scene.cpp": "e267b5121b5abba28e3f9a50c7400cf724b57063421c37bfa5b075cb104c6fdd",
+    "code/sparkium/pipelines/raytracing/core/core.cpp": "26cdf40183c5f01e1f83f9ed343451709333e4180c58d1e9afe227a43dcdebd6",
+    "code/sparkium/pipelines/raytracing/core/scene.cpp": "7734baed9f3190f0d1bb06354fbd71784cc0da19dcf6c13eda7b3080249c1521",
+    "code/sparkium/pipelines/raytracing/entity/entity_geometry_meterial.cpp": "2b48f44474e0df9410d4eee83a1aa5d1ceecbaf1cd7795c9ed1a3ca7569e5c47",
+    "code/sparkium/shaders/material/light/sampler.hlsl": "e1efb006ad8a4f4de19832e12442c309e3001f550ad160b0f52338f276f150fa",
+    "demo/sparkium_cli/main.cpp": "90d29684a43cd1f068b35d98f840f3f74bd5e04def144a9e64935ca9c4c9f645",
+    "test/sparkium/fallback_test.cpp": "4fec95d42daa2f32d275c5b4dcae657fa0a596f1aea32f260f5ba9f4fb3a9008"
+  }
+}
