@@ -1,7 +1,7 @@
 {
   "format": "sparkium-scene",
   "version": 1,
-  "name": "_mainScene",
+  "name": "Blender Classroom",
   "film": {
     "width": 1920,
     "height": 1080,
