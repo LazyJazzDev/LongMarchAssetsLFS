@@ -1,0 +1,112 @@
+{
+  "description": "CPU/CUDA render agreement after scalar finite-check fix",
+  "tested_equivalent_source_revision": "0d76f2b",
+  "png_rmse_threshold": 0.01,
+  "scenes": [
+    {
+      "scene": "blender_monster",
+      "resolution": [
+        256,
+        256
+      ],
+      "spp": 64,
+      "input_sha256": "f9ec820fbbde5bf656a3112351503dc6821e93672655be1e54f0c0daed518fde",
+      "rmse_vs_old_cuda": 0.0027019905098467326,
+      "linear_rmse": 0.001933891496033528,
+      "cpu_mean": 0.2138547673012603,
+      "cuda_mean": 0.21385805600730326,
+      "old_cpu_mean": 0.757589562348528,
+      "passed": true
+    },
+    {
+      "scene": "blender_classroom",
+      "resolution": [
+        256,
+        144
+      ],
+      "spp": 64,
+      "input_sha256": "f9eb1ad0e834588488b90c830f54be263e464108b36506cb692f11ba552a732f",
+      "rmse_vs_old_cuda": 0.0031442088374695376,
+      "linear_rmse": 0.0026423581643235865,
+      "cpu_mean": 0.4325788999200419,
+      "cuda_mean": 0.4325535021574776,
+      "old_cpu_mean": 6.325380289340415,
+      "passed": true
+    },
+    {
+      "scene": "blender_junkshop",
+      "resolution": [
+        256,
+        128
+      ],
+      "spp": 64,
+      "input_sha256": "6396b6f92180aa2f2b3ae5ade4e848a1856082a10e7895237917c0cf9d70b3f5",
+      "rmse_vs_old_cuda": 0.0036030592773316473,
+      "linear_rmse": 0.005363064683876258,
+      "cpu_mean": 0.050123652855139506,
+      "cuda_mean": 0.05014722789836488,
+      "old_cpu_mean": 2.5096226356187636,
+      "passed": true
+    }
+  ],
+  "feature_comparisons": [
+    {
+      "scene": "graph_smoke",
+      "a": "cpu",
+      "b": "cuda",
+      "png_rmse": 0.0005526041363753547,
+      "png_mae": 2.936070261437909e-05,
+      "png_max": 0.015686274509803935,
+      "linear_rmse": 0.0001367253185028524,
+      "linear_mae": 7.29593623797579e-06,
+      "linear_mean_a": 0.05953273615597965,
+      "linear_mean_b": 0.05953216387741852,
+      "finite": true
+    },
+    {
+      "scene": "camera_film",
+      "a": "cpu",
+      "b": "cuda",
+      "png_rmse": 0.0,
+      "png_mae": 0.0,
+      "png_max": 0.0,
+      "linear_rmse": 2.661308612984945e-06,
+      "linear_mae": 6.986571676748099e-08,
+      "linear_mean_a": 0.05612975989485255,
+      "linear_mean_b": 0.0561297168868388,
+      "finite": true
+    },
+    {
+      "scene": "hair_color",
+      "a": "cpu",
+      "b": "cuda",
+      "png_rmse": 0.0,
+      "png_mae": 0.0,
+      "png_max": 0.0,
+      "linear_rmse": 7.393518368975193e-09,
+      "linear_mae": 1.6801019834626155e-10,
+      "linear_mean_a": 0.03170284726521307,
+      "linear_mean_b": 0.03170284734090956,
+      "finite": true
+    },
+    {
+      "scene": "many_lights",
+      "a": "cpu",
+      "b": "cuda",
+      "png_rmse": 0.0,
+      "png_mae": 0.0,
+      "png_max": 0.0,
+      "linear_rmse": 1.0058086185303923e-08,
+      "linear_mae": 4.1109160520136356e-10,
+      "linear_mean_a": 0.12657129354405092,
+      "linear_mean_b": 0.12657129364470165,
+      "finite": true
+    }
+  ],
+  "tests": {
+    "cpu_passed": 10,
+    "cuda_passed": 9,
+    "cuda_cpu_specific_skip": 1
+  },
+  "limitations": "Long edge 256 at 64 spp, complete scene geometry/materials and original aspect ratio. Backend agreement, not full-resolution or Cycles ground truth. Source equivalence checked after PR split and rebase; these images were rendered before that split."
+}
