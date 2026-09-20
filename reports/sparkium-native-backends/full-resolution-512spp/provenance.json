@@ -1,0 +1,140 @@
+{
+  "source_commit": "7e96be02dbcb1cfbdcabc7d86f4fa6ae8ef3538e",
+  "assets_commit": "3e75f4622d22cee5295fbabb831c5dc372bf1ad4",
+  "binary_sha256": "fb90b9305d8b1a1941420b574925445c0941a15879a3aee9d1aa40e0e168466a",
+  "build": "Ninja Release",
+  "spp": 512,
+  "frames": 64,
+  "samples_per_dispatch": 8,
+  "start_utc": "2026-09-20T13:13:55.356563+00:00",
+  "variants": [
+    [
+      "d3d12",
+      "d3d12",
+      "ray_query"
+    ],
+    [
+      "vulkan",
+      "vulkan",
+      "ray_query"
+    ],
+    [
+      "cuda",
+      "cuda",
+      "rt_fallback"
+    ],
+    [
+      "optix",
+      "cuda",
+      "ray_tracing"
+    ]
+  ],
+  "scenes": {
+    "monster": {
+      "film": {
+        "width": 1024,
+        "height": 1024,
+        "persistence": 1.0,
+        "clamping": 100.0,
+        "max_exposure": 16.0,
+        "view_transform": "filmic",
+        "exposure": 0.30000001192092896,
+        "gamma": 1.149999976158142,
+        "contrast": 1.2
+      },
+      "renderer": {
+        "pipeline": "ray_tracing",
+        "samples_per_dispatch": 8,
+        "max_bounces": 32,
+        "alpha_shadow": true,
+        "ambient_light": [
+          0.02,
+          0.02,
+          0.02
+        ],
+        "background_color": [
+          0.05000000074505806,
+          0.034000005573034286,
+          0.010000002570450306
+        ]
+      },
+      "source_sha256": "86904872e4f50882b2ff2aeee5ef24edcb9efb68a65914a9dad9d741a7ef6532",
+      "geometry_count": 40,
+      "entity_count": 49
+    },
+    "classroom": {
+      "film": {
+        "width": 1920,
+        "height": 1080,
+        "persistence": 1.0,
+        "clamping": 100.0,
+        "max_exposure": 16.0,
+        "view_transform": "standard",
+        "exposure": 0.0,
+        "gamma": 1.0,
+        "contrast": 1.0
+      },
+      "renderer": {
+        "pipeline": "ray_tracing",
+        "samples_per_dispatch": 8,
+        "max_bounces": 16,
+        "alpha_shadow": true,
+        "ambient_light": [
+          0.02,
+          0.02,
+          0.02
+        ],
+        "background_color": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "source_sha256": "58378c341b4a882f67adf74569536c6b386953c7d60454bbef9a0260d7fe4fe7",
+      "geometry_count": 359,
+      "entity_count": 930
+    },
+    "junkshop": {
+      "film": {
+        "width": 2000,
+        "height": 1000,
+        "persistence": 1.0,
+        "clamping": 100.0,
+        "max_exposure": 16.0
+      },
+      "renderer": {
+        "pipeline": "ray_tracing",
+        "samples_per_dispatch": 8,
+        "max_bounces": 16,
+        "alpha_shadow": true,
+        "ambient_light": [
+          0.02,
+          0.02,
+          0.02
+        ],
+        "background_color": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "source_sha256": "7b3ecef49a52a1610709eee7b67c667957da98190cd66426f1969d84423e482b",
+      "geometry_count": 39,
+      "entity_count": 55
+    }
+  },
+  "finish_utc": "2026-09-20T13:56:45.298057+00:00",
+  "hardware": {
+    "gpu": "NVIDIA GeForce RTX 3090 Ti",
+    "driver": "596.49",
+    "os": "Windows",
+    "cuda": "12.9",
+    "optix": "9.0",
+    "slang": "2026.7.1 (vcpkg)"
+  },
+  "scene_paths": {
+    "monster": "assets/scenes/blender_monster/scene.json",
+    "classroom": "assets/scenes/blender_classroom/scene.json",
+    "junkshop": "assets/scenes/blender_junkshop/scene.json"
+  }
+}
