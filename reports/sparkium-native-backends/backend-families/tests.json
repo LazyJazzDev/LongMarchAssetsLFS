@@ -1,0 +1,30 @@
+[
+  {
+    "suite": "cpu",
+    "passed": 10
+  },
+  {
+    "suite": "cuda-optix-boundary",
+    "passed": 12
+  },
+  {
+    "suite": "gui",
+    "passed": 6
+  },
+  {
+    "suite": "bvh",
+    "passed": 3
+  },
+  {
+    "suite": "thread-pool",
+    "passed": 6
+  },
+  {
+    "suite": "d3d12",
+    "passed": 16
+  },
+  {
+    "suite": "vulkan",
+    "passed": 16
+  }
+]

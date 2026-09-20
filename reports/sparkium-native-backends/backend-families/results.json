@@ -1,0 +1,54 @@
+{
+  "width": 64,
+  "height": 64,
+  "spp": 16,
+  "max_bounces": 8,
+  "scene": "Cornell Box",
+  "comparison": "before/after Sparkium backend separation",
+  "binary_sha256": {
+    "before": "6fd9f15c1a38186e49d14cee1d49ba65995e6dd36b66324c70b07829f1cc6e5e",
+    "after": "17d343ac0c7af02cda5c1b5890487d4a904cc9e5e21c7d2e1682653fbe2d6d1b"
+  },
+  "results": [
+    {
+      "backend": "cpu",
+      "png_rmse": 0.0,
+      "png_max_abs": 0.0,
+      "pixel_equal": true,
+      "linear_rmse": 0.0,
+      "linear_finite": true
+    },
+    {
+      "backend": "cuda",
+      "png_rmse": 0.0,
+      "png_max_abs": 0.0,
+      "pixel_equal": true,
+      "linear_rmse": 0.0,
+      "linear_finite": true
+    },
+    {
+      "backend": "optix",
+      "png_rmse": 0.0,
+      "png_max_abs": 0.0,
+      "pixel_equal": true,
+      "linear_rmse": 0.0,
+      "linear_finite": true
+    },
+    {
+      "backend": "d3d12",
+      "png_rmse": 0.0,
+      "png_max_abs": 0.0,
+      "pixel_equal": true,
+      "linear_rmse": 0.0,
+      "linear_finite": true
+    },
+    {
+      "backend": "vulkan",
+      "png_rmse": 0.0,
+      "png_max_abs": 0.0,
+      "pixel_equal": true,
+      "linear_rmse": 0.0,
+      "linear_finite": true
+    }
+  ]
+}
