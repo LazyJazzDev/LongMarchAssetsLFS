@@ -1,0 +1,24 @@
+{
+  "scene": "Sparkium Cornell Box",
+  "width": 256,
+  "height": 256,
+  "spp": 64,
+  "max_bounces": 16,
+  "png_rmse": 1.2507606938231054e-05,
+  "png_max_abs": 0.0039215686274509665,
+  "comparison": "CUDA OptiX vs CUDA software BVH",
+  "source_commit": "542f5abab4dd1a6d517805a38ac9ac233908f811",
+  "build": "Windows Ninja Release",
+  "gpu": "NVIDIA GeForce RTX 3090 Ti",
+  "optix_sdk": "9.0.0",
+  "cuda_toolkit": "12.9",
+  "tests": {
+    "cpu_no_subprocess_pass": 10,
+    "cuda_pass": 9,
+    "cuda_cpu_only_skip": 1,
+    "optix_hardware_pass": 1,
+    "gui_worker_pass": 5,
+    "cpu_bvh_pass": 3,
+    "cpu_thread_pool_pass": 6
+  }
+}
