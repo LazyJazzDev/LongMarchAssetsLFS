@@ -1,0 +1,17 @@
+{
+  "source_commit": "5a567ebb4cb9d5cbf7efef30f6378ae4d40008e6",
+  "baseline_source_commit": "15bc473fa555732f79fd51f9e8967a4f1da68810",
+  "build": "Windows Ninja Release",
+  "gpu": "NVIDIA GeForce RTX 3090 Ti",
+  "cuda": "12.9",
+  "optix": "9.0",
+  "slang": "2026.7.1",
+  "gui": {
+    "width": 256,
+    "height": 256,
+    "samples_per_dispatch": 16,
+    "accumulated_spp": 245008,
+    "render_backend": "Graphics / D3D12 Ray Query",
+    "display_backend": "D3D12"
+  }
+}
