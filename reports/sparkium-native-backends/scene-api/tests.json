@@ -1,0 +1,65 @@
+[
+  {
+    "suite": "cpu",
+    "exit_code": 0,
+    "executable_sha256": "a06034455affe0130637cc8311665ab4102456d3021b3cc6d287cf8345547af0",
+    "passed": 10,
+    "skipped": 0
+  },
+  {
+    "suite": "cuda-optix-boundary",
+    "exit_code": 0,
+    "executable_sha256": "021896e483a3fe495764a1b8f7bb0f4868d4bedf6940c0d5373cbd4659e38360",
+    "passed": 13,
+    "skipped": 1
+  },
+  {
+    "suite": "gui",
+    "exit_code": 0,
+    "executable_sha256": "49cac6a770fa3094cedb00df88d2ad57b013e23bf65b9062a41c622fa1213b0a",
+    "passed": 7,
+    "skipped": 0
+  },
+  {
+    "suite": "bvh",
+    "exit_code": 0,
+    "executable_sha256": "cd2d64383ca4d6148c7de818e358504573646b208d0d928f4a3a14c3d5e4b174",
+    "passed": 4,
+    "skipped": 0
+  },
+  {
+    "suite": "thread-pool",
+    "exit_code": 0,
+    "executable_sha256": "def9843844a34f6d14319d94b7b39b8eda4a4a7305c16271eb0f80fcf052d733",
+    "passed": 6,
+    "skipped": 0
+  },
+  {
+    "suite": "d3d12",
+    "exit_code": 0,
+    "executable_sha256": "d290f12a3ecd2f0ddb83af8c1118e0af4b638e52ff2ad9f345c014fb86d4a7e5",
+    "passed": 16,
+    "skipped": 0
+  },
+  {
+    "suite": "vulkan",
+    "exit_code": 0,
+    "executable_sha256": "d290f12a3ecd2f0ddb83af8c1118e0af4b638e52ff2ad9f345c014fb86d4a7e5",
+    "passed": 16,
+    "skipped": 0
+  },
+  {
+    "suite": "scene-definition",
+    "exit_code": 0,
+    "executable_sha256": "f023647f06319f69019684e9bca8c4a9b4a1a48b117b70f9b16c5fd3e2ef609e",
+    "passed": 4,
+    "skipped": 0
+  },
+  {
+    "suite": "scene-renderer",
+    "exit_code": 0,
+    "executable_sha256": "47d5f58faa1f6b3ac8470af4008bee944f37ca342b6c392dc9ce6409fbc5d0b6",
+    "passed": 3,
+    "skipped": 0
+  }
+]
