@@ -1,0 +1,188 @@
+[
+  {
+    "case": "area_light",
+    "expected": "load",
+    "returncode": 0,
+    "passed": true
+  },
+  {
+    "case": "cornell_box",
+    "expected": "load",
+    "returncode": 0,
+    "passed": true
+  },
+  {
+    "case": "point_light",
+    "expected": "load",
+    "returncode": 0,
+    "passed": true
+  },
+  {
+    "case": "principled",
+    "expected": "load",
+    "returncode": 0,
+    "passed": true
+  },
+  {
+    "case": "specular",
+    "expected": "load",
+    "returncode": 0,
+    "passed": true
+  },
+  {
+    "case": "texture",
+    "expected": "load",
+    "returncode": 0,
+    "passed": true
+  },
+  {
+    "case": "missing-film",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "unknown-version",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "negative-width",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "unknown-reference",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "invalid-pipeline",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "wrong-format-type",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "wrong-width-type",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "wrong-vector-type",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "wrong-boolean-type",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "wrong-object-type",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "wrong-array-type",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "invalid-camera",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "invalid-fov",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "nonfinite-float",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "zero-samples",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "zero-bounces",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "invalid-mesh-index",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "incomplete-triangle",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "missing-mesh-uvs",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "wrong-mesh-positions",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "invalid-sphere",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "invalid-transform",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "unknown-material",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "unknown-geometry",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  },
+  {
+    "case": "invalid-json",
+    "expected": "reject",
+    "returncode": 1,
+    "passed": true
+  }
+]
