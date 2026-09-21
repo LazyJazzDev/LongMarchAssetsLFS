@@ -1,0 +1,21 @@
+{
+  "source_commit": "4e50b0af4196d92603317742378c451a8e27eec1",
+  "baseline_source_commit": "f5d25b0f86ac9c1e8ce9d675e4d0f4c64d8aaa0a",
+  "baseline_assets": "1240cd16eff6cd30e15dfcf46cf22c55ba903809",
+  "build": "Windows Ninja Release",
+  "gpu": "NVIDIA GeForce RTX 3090 Ti",
+  "cuda": "12.9",
+  "optix": "9.0",
+  "slang": "2026.7.1",
+  "passed_tests": 82,
+  "skipped_tests": 1,
+  "cli_cases": 31,
+  "final_cleanup_checks": [
+    "CPU and CUDA suites after the legacy pipeline guard fix",
+    "all five CLI image comparisons",
+    "31 JSON CLI cases"
+  ],
+  "figure_sha256": "635597b72fda29e79e6a98c7984c43190badeb7a48cc0c3e22ad5c8af29a7049",
+  "comparison": "Each backend before/after, not cross-backend equality.",
+  "limitations": "Raw PFM outputs and test logs remain in out/. No full-resolution Blender rerun or performance claims."
+}
