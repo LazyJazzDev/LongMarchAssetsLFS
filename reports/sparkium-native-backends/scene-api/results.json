@@ -1,0 +1,58 @@
+{
+  "scene": "Cornell Box",
+  "width": 64,
+  "height": 64,
+  "spp": 16,
+  "max_bounces": 8,
+  "baseline_source": "5a567ebb4cb9d5cbf7efef30f6378ae4d40008e6",
+  "baseline_assets": "7e9469642af3c93eaa4ca3f64f3e64e3e76047a8",
+  "current_binary_sha256": "bc425c1c35ed721c2be0e53acf64aaffb98535a6b3053cc3bf597693edd829e0",
+  "results": [
+    {
+      "backend": "cpu",
+      "pixel_equal": true,
+      "png_rmse": 0.0,
+      "png_max_abs": 0.0,
+      "linear_finite": true,
+      "baseline_png_sha256": "087e69782bd6a26ae6e492db4629a866172919ed5ad426555ebbe74fafdb3ce1",
+      "current_png_sha256": "087e69782bd6a26ae6e492db4629a866172919ed5ad426555ebbe74fafdb3ce1"
+    },
+    {
+      "backend": "cuda",
+      "pixel_equal": true,
+      "png_rmse": 0.0,
+      "png_max_abs": 0.0,
+      "linear_finite": true,
+      "baseline_png_sha256": "087e69782bd6a26ae6e492db4629a866172919ed5ad426555ebbe74fafdb3ce1",
+      "current_png_sha256": "087e69782bd6a26ae6e492db4629a866172919ed5ad426555ebbe74fafdb3ce1"
+    },
+    {
+      "backend": "optix",
+      "pixel_equal": true,
+      "png_rmse": 0.0,
+      "png_max_abs": 0.0,
+      "linear_finite": true,
+      "baseline_png_sha256": "087e69782bd6a26ae6e492db4629a866172919ed5ad426555ebbe74fafdb3ce1",
+      "current_png_sha256": "087e69782bd6a26ae6e492db4629a866172919ed5ad426555ebbe74fafdb3ce1"
+    },
+    {
+      "backend": "d3d12",
+      "pixel_equal": true,
+      "png_rmse": 0.0,
+      "png_max_abs": 0.0,
+      "linear_finite": true,
+      "baseline_png_sha256": "73a299c61e3dc450aabf717f8595ae4cc0484abe3796cd940ce0c6ecfeaad7f9",
+      "current_png_sha256": "73a299c61e3dc450aabf717f8595ae4cc0484abe3796cd940ce0c6ecfeaad7f9"
+    },
+    {
+      "backend": "vulkan",
+      "pixel_equal": true,
+      "png_rmse": 0.0,
+      "png_max_abs": 0.0,
+      "linear_finite": true,
+      "baseline_png_sha256": "eb245f8db86cb3c4e4dfbe9e0abbd8c89050921a207a35c6e3755aa19727e373",
+      "current_png_sha256": "eb245f8db86cb3c4e4dfbe9e0abbd8c89050921a207a35c6e3755aa19727e373"
+    }
+  ],
+  "source_commit": "5cf275f89faf6ae2d464ae60952a31d0d725a17d"
+}
