@@ -1,0 +1,36 @@
+{
+  "d3d12": {
+    "tests": 17,
+    "failures": 0,
+    "disabled": 0,
+    "errors": 0,
+    "auto_equals_explicit_ray_query": true
+  },
+  "vulkan": {
+    "tests": 17,
+    "failures": 0,
+    "disabled": 0,
+    "errors": 0,
+    "auto_equals_explicit_ray_query": true
+  },
+  "scene_names": [
+    "Blender Classroom",
+    "Blender Junkshop",
+    "Blender Monster"
+  ],
+  "configuration": {
+    "build": "Ninja Release, MSVC, no _USE_MATH_DEFINES override",
+    "scene": "Cornell Box",
+    "width": 128,
+    "height": 128,
+    "spp": 64,
+    "max_bounces": 8,
+    "input_assets": "109bf9681cc2bd14af17b96a616da0dcdf511544"
+  },
+  "executable_sha256": {
+    "demo_sparkium_cli.exe": "1ab61c1353850a22b7747d9cb374c973fc7ab6c91fda512d84d545de40db4cc6",
+    "sparkium_fallback_test.exe": "a2f030da0a1c3fcaa4960f65a45f81e350b5ba6aa0f1918706cbb7404eadb57a"
+  },
+  "source_commit": "9099bdaf8982e428e4a4ba7461c4083a6eeeacfe",
+  "pr46_audited_head": "6a29c546e2acaa53604ba4f2061b7739f7523575"
+}
