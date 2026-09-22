@@ -1,0 +1,65 @@
+[
+  {
+    "suite": "scene-definition",
+    "exit_code": 0,
+    "executable_sha256": "ffcd33b8d21298509f48627e5ae23974127a276400d4d32e932e714b47d2d672",
+    "passed": 5,
+    "skipped": 0
+  },
+  {
+    "suite": "scene-renderer",
+    "exit_code": 0,
+    "executable_sha256": "50a2120e8b5f34c388a15baf825bd3178606e76d4853a4545944dcd30395675c",
+    "passed": 5,
+    "skipped": 0
+  },
+  {
+    "suite": "gui",
+    "exit_code": 0,
+    "executable_sha256": "3cf3c60dda87ecf3060cd97d33dc787a80c29bfcd69a4b0a58281613c4c4e0ef",
+    "passed": 7,
+    "skipped": 0
+  },
+  {
+    "suite": "bvh",
+    "exit_code": 0,
+    "executable_sha256": "43a0f4c221a4186a0ebf1cc85e0252bbb0b1daadfd547ea1f459b6a8959216ce",
+    "passed": 4,
+    "skipped": 0
+  },
+  {
+    "suite": "thread-pool",
+    "exit_code": 0,
+    "executable_sha256": "03fa069a3e774cd44cc0b3883dc27093ed1ee01e50e315b40d30cf02ca27dc5b",
+    "passed": 6,
+    "skipped": 0
+  },
+  {
+    "suite": "d3d12",
+    "exit_code": 0,
+    "executable_sha256": "cb4edb9e9624ee0e476b21a64f6a4efef44abdf9afc5798283c050f653ea63dc",
+    "passed": 16,
+    "skipped": 0
+  },
+  {
+    "suite": "vulkan",
+    "exit_code": 0,
+    "executable_sha256": "cb4edb9e9624ee0e476b21a64f6a4efef44abdf9afc5798283c050f653ea63dc",
+    "passed": 16,
+    "skipped": 0
+  },
+  {
+    "suite": "cpu",
+    "exit_code": 0,
+    "executable_sha256": "178e2d636514842a744cf3926e6b2650697abcb6ccdcb92cb5b97c939cc80073",
+    "passed": 11,
+    "skipped": 0
+  },
+  {
+    "suite": "cuda-optix-boundary",
+    "exit_code": 0,
+    "executable_sha256": "906d53f234a9b17e31f02c0c43e62e07ba9da768d881a21488873920c76b9823",
+    "passed": 14,
+    "skipped": 1
+  }
+]

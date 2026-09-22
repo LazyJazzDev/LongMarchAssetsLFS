@@ -41,3 +41,10 @@ publish this repository's commit and LFS objects first.
 This repository starts with fresh Git history and stores large assets in LFS
 from its first commit. The original LongMarchAssets repository is preserved
 for older LongMarch revisions.
+
+## Source snapshot
+
+Imported from `LazyJazzDev/LongMarchAssets` branch `blender-align`, commit
+`04d673a1307304fb7e94829b0d0fd0bd279df00b`. Original scene documentation follows.
+
+# LongMarchAssets

@@ -1,0 +1,21 @@
+{
+  "source_commit": "81b6b449df41313728d32d265b631056beda58f3",
+  "baseline_source_commit": "4e50b0af4196d92603317742378c451a8e27eec1",
+  "baseline_assets": "34715e2036b86b10c5a759e4be351ac84628ecb5",
+  "build": "Windows Ninja Release",
+  "gpu": "NVIDIA GeForce RTX 3090 Ti",
+  "cuda": "12.9",
+  "optix": "9.0",
+  "slang": "2026.7.1",
+  "passed_tests": 82,
+  "skipped_tests": 1,
+  "cli_cases": 31,
+  "final_cleanup_checks": [
+    "all nine suites after resource/compiler split",
+    "all five CLI image comparisons",
+    "31 JSON CLI cases"
+  ],
+  "figure_sha256": "1c77805897cd37dae2e92f064912a62fe0796ccfb2a51a86eb11c2030f0a6ae9",
+  "comparison": "Each backend before/after, not cross-backend equality.",
+  "limitations": "Raw PFM outputs and test logs remain in out/. No full-resolution Blender rerun or performance claims."
+}
