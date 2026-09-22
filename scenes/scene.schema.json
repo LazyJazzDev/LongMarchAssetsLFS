@@ -26,7 +26,7 @@
     "renderer": {
       "type": "object",
       "properties": {
-        "pipeline": { "enum": ["auto", "rasterization", "ray_tracing"] },
+        "pipeline": { "enum": ["auto", "realtime", "ray_tracing", "rt_fallback", "ray_query"] },
         "samples_per_dispatch": { "type": "integer", "minimum": 1 },
         "max_bounces": { "type": "integer", "minimum": 1 },
         "alpha_shadow": { "type": "boolean" },
