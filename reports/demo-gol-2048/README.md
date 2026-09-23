@@ -1,18 +1,22 @@
 # Game of Life and 2048 demos
 
-Window captures of `demo_gol` and `demo_2048` from the macOS build (Metal,
-Apple M5), taken with the system screenshot tool, so each image keeps the
-window frame and its shadow. All four are the whole window: the demos were run
-at their default size and nothing was cropped.
+Actual macOS window captures from the Ninja Release build on Apple M5, using
+Metal. Captured with `screencapture -l` at each game's default window size,
+including the native title bar, rounded window corners, and system shadow.
+No window content was cropped or composited. Window titles put the active
+backend first: `[Metal] Game of Life FPS: …` and `[Metal] 2048 FPS: …`.
 
 | File | Scenario |
 | --- | --- |
-| `gol-sidebar.png` | 40x30 grid seeded with `--random 0.3`; the panel sits on the left, with refresh and the randomize die above the speed and play controls |
-| `gol-bottom-bar.png` | 80x14 grid seeded with `--random 0.35`; the panel moves to the bottom bar, play and speed on the left, the die and refresh on the right |
-| `2048-board.png` | A fresh game: the board, the 2048 logo, and the score board with **SCORE** and **MENU** |
-| `2048-autoplay.png` | The autoplay running, started by five consecutive clicks on the score board: the title reads **AI**, the board is red, and the strategy is playing |
+| `gol-sidebar.png` | Paused 40x30 grid seeded with `--random 0.3`, vertical W/H sliders, red reset and blue randomize buttons |
+| `gol-bottom-bar.png` | 80x14 grid seeded with `--random 0.35`, briefly simulated then paused, horizontal W/H sliders and lightning speed selected |
+| `2048-board.png` | Manual arrow-key play with merged tiles and the score board |
+| `2048-menu.png` | MENU offers KEEP GOING and NEW GAME |
+| `2048-autoplay.png` | AI autoplay activated by five consecutive SCORE clicks, with its red score board and AI label |
 
-The die randomizes every cell independently at 50% live/dead, keeps the
-play/pause state, and animates a tumble that lands on a randomly chosen face.
-The 2048 autoplay answers with a move of its own and ignores the arrow keys
-until the score board is clicked once more.
+Game of Life supports independent dimensions from 2 to 200, automatic fitting,
+two-finger scrolling and macOS pinch zoom. The controls adapt between a sidebar
+and a bottom bar. Lightning mode runs generations without an artificial wait.
+
+2048 uses the same move and spawn rules for manual play and the expectimax AI.
+One more SCORE click returns control to the player.
