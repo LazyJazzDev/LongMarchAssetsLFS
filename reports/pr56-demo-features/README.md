@@ -8,7 +8,7 @@ channels. No framebuffer exports or composited window decorations are used.
 | Image | Scene / state | PNG including window/shadow | Application supersampling |
 | --- | --- | --- | --- |
 | `gol-sidebar.png` | 100 × 100 board, 295P5H1V1 preset, paused | 2784 × 1728 | 2× per axis |
-| `gol-horizontal.png` | 100 × 25 board, Gosper glider gun preset, paused | 2784 × 1728 | 2× per axis |
+| `gol-horizontal.png` | 100 × 25 board, Gosper glider gun preset, paused | 2696 × 1640 | 2× per axis |
 | `2048-score-fit.png` | Game-over panel with injected score 2147483647 | 1664 × 2208 | 3× per axis |
 
 The 2048 score is a synthetic layout stress input injected by a temporary runtime
