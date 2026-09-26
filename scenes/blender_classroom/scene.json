@@ -14,7 +14,7 @@
     "contrast": 1.0
   },
   "renderer": {
-    "pipeline": "ray_tracing",
+    "pipeline": "auto",
     "samples_per_dispatch": 8,
     "max_bounces": 16,
     "alpha_shadow": true,
