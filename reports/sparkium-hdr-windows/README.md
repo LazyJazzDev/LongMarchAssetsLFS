@@ -33,3 +33,15 @@ The numbers in the UI come from the OS configuration, not a light meter.
 Seven HDR tests pass with Vulkan synchronization validation, including GPU
 readback of scene and UI gray values, source/alpha preservation, window resize,
 repeated SDR/HDR switching, reference-white changes, and unknown-value fallback.
+
+## Windows HDR headroom
+
+`d3d12-headroom.png` shows the final minimal API/UI at code commit `8a29413`:
+only the computed HDR headroom is exposed, with DXGI peak luminance kept internal.
+D3D12, Cornell Box, 768x768, Auto -> Ray Query, 1 sample/frame, 8 bounces,
+0 EV, max exposure 100; captured at 228 accumulated spp using PrintWindow.
+The UI reports SDR reference white 280 nits (3.50x) and HDR headroom 3.62x.
+Windows estimates headroom as max(1, DXGI reported peak / system SDR white).
+This is not a real-time measurement or a physical brightness comparison.
+The updated GUI/test targets build successfully; all 8 HDR tests pass on Windows,
+including D3D12 and Vulkan, with Vulkan synchronization validation enabled.
