@@ -1,4 +1,4 @@
-#include "common.hlsli"
+#include "common.slang"
 
 [shader("closesthit")] void Main(inout RayPayload payload, in BuiltInTriangleIntersectionAttributes attr) {
   float3 barycentrics =

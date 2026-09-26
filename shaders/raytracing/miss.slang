@@ -1,4 +1,4 @@
-#include "common.hlsli"
+#include "common.slang"
 
 [shader("miss")] void Main(inout RayPayload payload) {
   if (!payload.hit) {
