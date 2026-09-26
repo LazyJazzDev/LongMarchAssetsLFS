@@ -7,7 +7,7 @@
     "height": 1024,
     "persistence": 1.0,
     "clamping": 100.0,
-    "max_exposure": 1.0
+    "max_exposure": 16.0
   },
   "renderer": {
     "pipeline": "auto",
