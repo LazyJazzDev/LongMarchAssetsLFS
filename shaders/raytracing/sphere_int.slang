@@ -1,4 +1,4 @@
-#include "common.hlsli"
+#include "common.slang"
 
 [shader("intersection")] void Main() {
   float3 origin = WorldRayOrigin();
