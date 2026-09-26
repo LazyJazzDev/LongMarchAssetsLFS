@@ -1,7 +1,7 @@
-#include "common.hlsli"
+#include "common.slang"
 
 [shader("raygeneration")] void Main() {
-  float2 pixel_center = (float2)DispatchRaysIndex() + float2(0.5, 0.5);
+  float2 pixel_center = float2(DispatchRaysIndex().xy) + float2(0.5, 0.5);
   float2 uv = pixel_center / float2(DispatchRaysDimensions().xy);
   uv.y = 1.0 - uv.y;
   float2 d = uv * 2.0 - 1.0;
