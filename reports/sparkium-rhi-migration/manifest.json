@@ -1,0 +1,59 @@
+{
+  "candidate_commit": "b86bb96c6f6c0afda043de69a1c2f61a4f684ebc",
+  "graphics_baseline": "1b39c87980129320e2579b57fafdbc8f2c18116a",
+  "description": "Actual CLI output images; each original/RHI pair is pixel-identical. Captured under Nsight on Windows RTX3090Ti. These images establish the stated scene/configuration only, not whole-project performance acceptance.",
+  "images": [
+    {
+      "file": "cornell-d3d12-ray_tracing-graphics.png",
+      "sha256": "0014a74116a547ad90870e7225ee101e4835d9f039d1d6d1580f7d0367b2bfc7",
+      "variant": "graphics",
+      "pipeline": "ray_tracing",
+      "backend": "D3D12",
+      "resolution": [
+        512,
+        512
+      ],
+      "batches": 64,
+      "spp": 256
+    },
+    {
+      "file": "cornell-d3d12-ray_tracing-rhi.png",
+      "sha256": "0014a74116a547ad90870e7225ee101e4835d9f039d1d6d1580f7d0367b2bfc7",
+      "variant": "rhi",
+      "pipeline": "ray_tracing",
+      "backend": "D3D12",
+      "resolution": [
+        512,
+        512
+      ],
+      "batches": 64,
+      "spp": 256
+    },
+    {
+      "file": "cornell-d3d12-rasterization-graphics.png",
+      "sha256": "a34ea30d8c188bcb0da7c18694ca753c9a83850e05b477eb8b76f81fd6d4bd54",
+      "variant": "graphics",
+      "pipeline": "rasterization",
+      "backend": "D3D12",
+      "resolution": [
+        512,
+        512
+      ],
+      "batches": 64,
+      "spp": null
+    },
+    {
+      "file": "cornell-d3d12-rasterization-rhi.png",
+      "sha256": "a34ea30d8c188bcb0da7c18694ca753c9a83850e05b477eb8b76f81fd6d4bd54",
+      "variant": "rhi",
+      "pipeline": "rasterization",
+      "backend": "D3D12",
+      "resolution": [
+        512,
+        512
+      ],
+      "batches": 64,
+      "spp": null
+    }
+  ]
+}
