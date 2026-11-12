@@ -1,0 +1,37 @@
+{
+  "code_commit": "6e9d4fda9eec8d011ae278703d59affdb2a28340",
+  "scene": "Cornell Box",
+  "pipeline": "Ray Query",
+  "film_resolution": [
+    512,
+    512
+  ],
+  "capture": "Windows PrintWindow capture of actual application window after resizing to1100x850; titlebar included; no compositing",
+  "scope": "Functional interaction while progressive rendering continues. Before/after exposure screenshots have different accumulated sample counts and are not cross-backend pixel comparisons or latency benchmarks. Exposure restored successfully and both windows closed with clean exit.",
+  "images": [
+    {
+      "file": "d3d12-settled.png",
+      "sha256": "7c6faf872292e0980c4a3c599400b2edc67bc12d1093ac01d6dda52898e99b4b",
+      "backend": "d3d12",
+      "exposure_ev": 0
+    },
+    {
+      "file": "d3d12-exposure.png",
+      "sha256": "7b24bb910967a492890269997d03d08ee816d1fbc765c28cd9fe7f40fed4b00e",
+      "backend": "d3d12",
+      "exposure_ev": 6.35
+    },
+    {
+      "file": "vulkan-settled.png",
+      "sha256": "df8212fc28f3ba81bcab9f6aa70cc05db05a6e72de9e871ec232fa776a5ec2d4",
+      "backend": "vulkan",
+      "exposure_ev": 0
+    },
+    {
+      "file": "vulkan-exposure.png",
+      "sha256": "b094dfbfd8724ebd1313cb0f6dbd48e01253efba6140ec6c6268370e78a2fed4",
+      "backend": "vulkan",
+      "exposure_ev": 6.35
+    }
+  ]
+}
